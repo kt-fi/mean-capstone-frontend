@@ -1,1 +1,44 @@
-<p>signup works!</p>
+<div class="d-flex justify-content-center">
+
+    <form class="col-md-5 col-sm-12 col-xs-12 p-3 mt-5 signin-box" #signupRef="ngForm" (ngSubmit)="submitForm(signupRef)">    
+        <h3>SIGN UP</h3>
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">UserName</label>
+        <input type="text" name="uname" ngModel  #userRef="ngModel" class="form-control" id="exampleInputUname1" aria-describedby="unameHelp" required>
+        <span *ngIf="userRef.errors && (userRef.dirty || userRef.touched) ">
+            <span [hidden]="!userRef.errors.required" style="color: red;">Your Name is required</span> 
+        </span><br>
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="email" ngModel  #emailRef="ngModel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        <span *ngIf="emailRef.errors && (emailRef.touched || emailRef.dirty)">
+            <span [hidden]="!emailRef.errors.required" style="color: red">email address is Required</span>
+        </span>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" ngModel  #passRef="ngModel" class="form-control" id="exampleInputPassword1" required minlength="5">
+        <span *ngIf="passRef.errors && (passRef.touched || passRef.dirty)">
+            <span [hidden]="!passRef.errors.required"  style="color: red">You must supply a password</span>
+            <span [hidden]="!passRef.errors.minlength"  style="color: red">Password must be at min 5 chars</span>
+        </span>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Repeat Password</label>
+            <input type="password" name="password" ngModel  #passRef="ngModel" class="form-control" id="exampleInputPassword1" required minlength="5">
+            <span *ngIf="passRef.errors && (passRef.touched || passRef.dirty)">
+                <span [hidden]="!passRef.errors.required"  style="color: red">You must supply a password</span>
+                <span [hidden]="!passRef.errors.minlength"  style="color: red">Password must be at min 5 chars</span>
+            </span>
+            </div>
+        <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" [disabled]="signupRef.invalid">Submit</button>
+        <button type="reset" class="btn btn-warning">Clear Form</button>
+    </form>
+
+</div>
+
