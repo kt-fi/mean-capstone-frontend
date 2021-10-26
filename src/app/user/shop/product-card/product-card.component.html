@@ -1,1 +1,23 @@
-<p>product-card works!</p>
+
+
+<div *ngIf="product"  class="product-card card">
+    <img src="" alt="" class="procut-image">
+    <div class="card-main">
+        <h4>{{product.pname}}</h4>
+        <p>{{product.description}}</p>
+        <h5>Price:</h5>
+        <h6>{{product.price}}</h6>
+        <div class="product-btn">
+            <button class="btn btn-primary">Cart</button>
+            <button class="btn btn-warning">Want List</button>    
+        </div>
+    </div>
+   <div class="product-price" *ngIf="product.offer">
+    Offer
+</div> 
+
+
+ 
+</div> 
+
+ 

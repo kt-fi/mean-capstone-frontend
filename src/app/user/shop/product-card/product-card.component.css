@@ -1,0 +1,67 @@
+.product-image {
+
+}
+
+
+.product-card{
+    position: relative;
+    height: 100%;
+   
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+@media screen and (max-width: 1000px) {
+    .product-card{
+        width: 25vw;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .product-card{
+        width: 33vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .product-card{
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .product-card{
+        width: 100vw;
+        margin: 0;
+    }
+}
+
+.product-price {
+    position: absolute;
+    top: 5px;
+    right:5px;
+    background-color: red;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: white;
+    margin: auto
+}
+
+.card-main{
+    padding: 0 10px 5px 10px;
+}
+
+.product-btn{
+    text-align: center;
+    
+}
+
+.btn:first-child{
+    margin-right: 5px;
+
+}
+
+.btn{
+    width: 48%;
+}
