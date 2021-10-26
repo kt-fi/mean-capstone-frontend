@@ -1,12 +1,13 @@
 .product-image {
-
+    width: 250px;
+    height: 250px;
 }
 
 
 .product-card{
     position: relative;
-    height: 100%;
-   
+    
+    margin: 5px;
     box-sizing: border-box;
     display: inline-block;
 }
