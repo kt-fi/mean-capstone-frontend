@@ -18,13 +18,13 @@ export class SignupComponent implements OnInit {
   errorMsg:string = "";
   passwordsMatch:boolean = false
   userType:string = ""
-  
+
   ngOnInit(): void {
   }
 
   enterUserPage(data:any){
     this.userType = data.data.utype;
-    this.router.navigate([this.userType])
+    this.router.navigate([`dashboard/${this.userType}`])
   }
 
   submitForm(formRef:NgForm):any{

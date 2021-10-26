@@ -12,14 +12,14 @@ export class LoginComponent implements OnInit {
 
   constructor(public userService:UserServiceService, public router:Router) { }
 
-  errorMsg:string = ""
-
+  errorMsg:string = "";
+  userType?:string;
   ngOnInit(): void {
   }
 
   enterUserPage(data:any){
-    let userType = data.user.utype;
-    this.router.navigate([userType])
+    this.userType = data.user.utype;
+    this.router.navigate([`dashboard/${this.userType}`])
   }
 
   submitForm(loginRef:NgForm):void{

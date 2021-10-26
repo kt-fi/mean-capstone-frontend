@@ -8,5 +8,8 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-  getAllProducts():Observable<Product>
+  getAllProducts():Observable<any>{
+    let products = this.http.get<any>("http://localhost:3001/products/getAllProducts");
+    return products;
+  }
 }

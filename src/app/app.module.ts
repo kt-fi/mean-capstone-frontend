@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ShopComponent } from './user/shop/shop.component';
+import { ProductCardComponent } from './user/shop/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
     LoginComponent,
     SignupComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    HeaderComponent,
+    ShopComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
