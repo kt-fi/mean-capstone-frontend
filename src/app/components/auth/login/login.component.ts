@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
 
   enterUserPage(data:any){
     this.userType = data.user.utype;
+    localStorage.setItem("user", data.user.uname)
+    localStorage.setItem("token", data.token)
     this.router.navigate([`dashboard/${this.userType}`])
   }
 

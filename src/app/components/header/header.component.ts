@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService:UserServiceService) { }
+    
+  username:any = localStorage.getItem("user");
 
   ngOnInit(): void {
+
+
   }
 
 }

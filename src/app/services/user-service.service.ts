@@ -11,6 +11,7 @@ import { User } from '../models/user';
 export class UserServiceService {
 
   user?:any;
+  username?:string;
 
   constructor(public http: HttpClient) { }
 
@@ -21,8 +22,8 @@ export class UserServiceService {
   }
 
   findUser(user:any):Observable<any>{
-    console.log(user)
-   this.user = this.http.post<any>("http://localhost:3001/users/getUser", user);
+   let data = this.http.post<any>("http://localhost:3001/users/getUser", user);
+   this.user = data;
    return this.user;
   }
 }
