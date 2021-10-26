@@ -15,7 +15,7 @@ export class UserServiceService {
   constructor(public http: HttpClient) { }
 
  
-  createUser(newUser:User):Observable<User>{
+  createUser(newUser:any):Observable<any>{
     this.user = this.http.post<User>("http://localhost:3001/users/createUser", newUser);
     return this.user;
   }

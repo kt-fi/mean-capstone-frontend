@@ -22,11 +22,11 @@
         <label class="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
         <div>
-           <p style="color:red">message</p> 
+           <p style="color:red">{{errorMsg}}</p> 
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="loginRef.invalid">Submit</button>
         <button type="reset" class="btn btn-warning">Clear Form</button>
-        
+        <a routerLink="../signup">Sign Up</a>
     </form>
 
 </div>

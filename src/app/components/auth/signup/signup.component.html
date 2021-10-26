@@ -24,20 +24,20 @@
         </span>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Repeat Password</label>
-            <input type="password" name="password" ngModel  #passRef="ngModel" class="form-control" id="exampleInputPassword1" required minlength="5">
-            <span *ngIf="passRef.errors && (passRef.touched || passRef.dirty)">
-                <span [hidden]="!passRef.errors.required"  style="color: red">You must supply a password</span>
-                <span [hidden]="!passRef.errors.minlength"  style="color: red">Password must be at min 5 chars</span>
+            <label for="exampleInputPassword2" class="form-label">Repeat Password</label>
+            <input type="password" name="password2" ngModel  #pass2Ref="ngModel" class="form-control" id="exampleInputPassword2" required minlength="5">
+            <span>
+                <span [hidden]="!passwordsMatch"  style="color: red">Password must be at min 5 chars</span>
             </span>
             </div>
         <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
-       
+        <p style="color:red">{{errorMsg}}</p> 
         <button type="submit" class="btn btn-primary" [disabled]="signupRef.invalid">Submit</button>
         <button type="reset" class="btn btn-warning">Clear Form</button>
+        <a routerLink="../login">Log In</a>
     </form>
 
 </div>

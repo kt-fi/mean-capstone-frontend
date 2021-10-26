@@ -15,16 +15,33 @@ export class SignupComponent implements OnInit {
 
   constructor(private userService:UserServiceService, public router:Router) { }
 
+  errorMsg:string = "";
+  passwordsMatch:boolean = false
+  userType:string = ""
+  
   ngOnInit(): void {
   }
 
   enterUserPage(data:any){
-    let userType = data.data.utype;
-    this.router.navigate([userType])
+    this.userType = data.data.utype;
+    this.router.navigate([this.userType])
   }
 
-  submitForm(formRef:NgForm){
+  submitForm(formRef:NgForm):any{
+
     let user = new User(formRef.value.uname,  formRef.value.email, "user", formRef.value.password);
-    this.userService.createUser(user).subscribe(result => this.enterUserPage(result));
-  }
-}
+    if(formRef.value.password != formRef.value.password2){
+      return this.errorMsg = "Passwords must match"
+    }
+    this.userService.createUser(user).subscribe((result) => {
+      if(!result.msg){
+      return this.enterUserPage(result)
+     }else{
+       return this.errorMsg = result.msg
+     }
+     });
+ 
+   }
+ 
+ }
+ 
