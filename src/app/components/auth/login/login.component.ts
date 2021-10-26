@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,20 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService:UserServiceService, public router:Router) { }
 
   ngOnInit(): void {
   }
 
+  enterUserPage(data:any){
+  
+    let userType = data.user.utype;
+     this.router.navigate([userType])
+  }
+
   submitForm(loginRef:NgForm):void{
-    console.log(loginRef.value)
+    this.userService.findUser(loginRef.value).subscribe(result => this.enterUserPage(result));
+
   }
 
 }
