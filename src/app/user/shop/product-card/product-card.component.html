@@ -11,7 +11,7 @@
         <h5>Price:</h5>
         <h6>${{product.price}}</h6>
         <div class="product-btn">
-            <button class="btn btn-primary">Cart</button>
+            <button class="btn btn-primary" (click)="addItemToCart(product.pid, quantity)">Cart</button>
             <button class="btn btn-warning">Want List</button>    
         </div>
     </div>

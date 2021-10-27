@@ -14,7 +14,8 @@ export class ShopComponent implements OnInit {
   products?:Product[];
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(result=> this.products = result)
+    this.productService.getAllProducts().subscribe(result=> {this.products = result; console.log(this.products)})
+   
   }
 
 }
