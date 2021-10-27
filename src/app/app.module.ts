@@ -14,6 +14,7 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
 import { HeaderComponent } from './components/header/header.component';
 import { ShopComponent } from './user/shop/shop.component';
 import { ProductCardComponent } from './user/shop/product-card/product-card.component';
+import { ProductsComponent } from './admin/products/products.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductCardComponent } from './user/shop/product-card/product-card.comp
     UserDashboardComponent,
     HeaderComponent,
     ShopComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

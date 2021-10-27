@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { ProductsComponent } from './admin/products/products.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
@@ -19,8 +20,11 @@ const routes: Routes = [
       { path:"shop", component: ShopComponent},
       { path:"", redirectTo: "shop", pathMatch:"full"}
     ]},
-    {path:"admin", component: AdminDashboardComponent},
-    {path:"", redirectTo:"dashboard", pathMatch:"full"}
+    {path:"admin", component: AdminDashboardComponent, children: [
+    { path:"products", component: ProductsComponent},
+    {path:"", redirectTo:"products", pathMatch:"full"}
+  ]},
+    
   ]},
   
   {path:"", redirectTo: "auth", pathMatch:"full"}
