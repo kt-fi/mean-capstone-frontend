@@ -11,8 +11,8 @@
         <h5>Price:</h5>
         <h6>${{product.price}}</h6>
         <div class="product-btn">
-            <button class="btn btn-primary" (click)="addItemToCart(product.pid, quantity)">Cart</button>
-            <button class="btn btn-warning" (click)="addItemToWishList(product.pid)">Want List</button>    
+            <button class="btn btn-primary" (click)="addItemToCart(product, quantity)">Cart</button>
+            <button class="btn btn-warning" (click)="addItemToWishList(product)">Want List</button>    
         </div>
     </div>
    <div class="product-price" *ngIf="product.offer">

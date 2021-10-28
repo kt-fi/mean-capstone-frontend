@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartProduct } from 'src/app/models/cart-product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(public productService:ProductService) { }
+
+  uid:any = localStorage.getItem("uid")
+
+  products?:any[];
 
   ngOnInit(): void {
+    this.productService.getUserCartList(this.uid).subscribe(result =>{ 
+      console.log(result)
+      this.products = result})
   }
+
+  removeItemFromCart(itemId:string):void{
+    this.productService.removeItemFromCart(itemId, this.uid).subscribe(result => console.log(result))
+  }
+
 
 }

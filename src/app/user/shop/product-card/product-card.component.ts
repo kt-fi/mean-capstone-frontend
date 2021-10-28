@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartProduct } from 'src/app/models/cart-product';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+
 
 @Component({
   selector: 'app-product-card',
@@ -21,15 +23,15 @@ export class ProductCardComponent implements OnInit {
    
   }
 
-  addItemToWishList(pid:string):void{
-    let uid = localStorage.getItem("uid")
-    let data = { pid }
-   this.productService.addProductToWishList(data, uid).subscribe(result => console.log(result))
+  addItemToWishList(product:object):void{
+  //   let uid = localStorage.getItem("uid")
+  //   let data = { product }
+  //  this.productService.addProductToWishList(data, uid).subscribe(result => console.log(result))
   }
 
-  addItemToCart(pid:any, quantity:number):void{
-     let uid = localStorage.getItem("uid")
-     let data = { pid, quantity}
-    this.productService.addProductToCart(data, uid).subscribe(result => console.log(result))
+  addItemToCart(product:any, quantity:number):void{
+    let productData = new CartProduct(product.pid, product.pname, product.pimage, quantity, product.price);
+    let uid = localStorage.getItem("uid")
+    this.productService.addProductToCart(productData, uid).subscribe(result => console.log(result))
   }
 }
