@@ -6,7 +6,9 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { MainComponent } from './components/main/main.component';
+import { CartComponent } from './user/shop/cart/cart.component';
 import { ShopComponent } from './user/shop/shop.component';
+import { WishListComponent } from './user/shop/wish-list/wish-list.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:"dashboard", component: MainComponent, children:[
     {path:"user", component: UserDashboardComponent, children:[
       { path:"shop", component: ShopComponent},
+      { path:"cart", component: CartComponent},
+      { path:"wishList", component: WishListComponent},
       { path:"", redirectTo: "shop", pathMatch:"full"}
     ]},
     {path:"admin", component: AdminDashboardComponent, children: [

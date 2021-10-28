@@ -21,6 +21,12 @@ export class ProductCardComponent implements OnInit {
    
   }
 
+  addItemToWishList(pid:string):void{
+    let uid = localStorage.getItem("uid")
+    let data = { pid }
+   this.productService.addProductToWishList(data, uid).subscribe(result => console.log(result))
+  }
+
   addItemToCart(pid:any, quantity:number):void{
      let uid = localStorage.getItem("uid")
      let data = { pid, quantity}

@@ -15,6 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ShopComponent } from './user/shop/shop.component';
 import { ProductCardComponent } from './user/shop/product-card/product-card.component';
 import { ProductsComponent } from './admin/products/products.component';
+import { CartComponent } from './user/shop/cart/cart.component';
+import { WishListComponent } from './user/shop/wish-list/wish-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProductsComponent } from './admin/products/products.component';
     HeaderComponent,
     ShopComponent,
     ProductCardComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,

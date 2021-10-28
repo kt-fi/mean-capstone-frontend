@@ -18,5 +18,11 @@ export class ProductService {
     let product = this.http.put<Product>(`http://localhost:3001/users/addProductToCart/${uid}`, data);
     return product;
   }
+  
+  addProductToWishList(data:any, uid:any):Observable<Product>{
+    let product = this.http.put<Product>(`http://localhost:3001/users/addProductToWishList/${uid}`, data);
+    return product;
+  }
 
+ 
 }
