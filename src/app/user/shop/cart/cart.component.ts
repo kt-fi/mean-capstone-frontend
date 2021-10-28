@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   uid:any = localStorage.getItem("uid")
 
   products?:any[];
-
+  msg:string = ""
   ngOnInit(): void {
     this.productService.getUserCartList(this.uid).subscribe(result =>{ 
       console.log(result)
@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   }
 
   removeItemFromCart(itemId:string):void{
-    this.productService.removeItemFromCart(itemId, this.uid).subscribe(result => console.log(result))
+    this.productService.removeItemFromCart(itemId, this.uid).subscribe(result => this.products = result)
   }
 
 
