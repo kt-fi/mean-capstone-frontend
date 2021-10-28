@@ -18,12 +18,16 @@ export class SignupComponent implements OnInit {
   errorMsg:string = "";
   passwordsMatch:boolean = false
   userType:string = ""
-
+  uid?:string
   ngOnInit(): void {
   }
 
   enterUserPage(data:any){
     this.userType = data.data.utype;
+    this.uid =data.data.uid
+    localStorage.setItem("user", data.data.uname)
+    localStorage.setItem("uid", data.data.uid)
+    localStorage.setItem("token", data.token)
     this.router.navigate([`dashboard/${this.userType}`])
   }
 

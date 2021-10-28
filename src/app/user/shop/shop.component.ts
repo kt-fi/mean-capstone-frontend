@@ -12,8 +12,10 @@ export class ShopComponent implements OnInit {
   constructor(private productService:ProductService) { }
 
   products?:Product[];
-
+  uid?:any
   ngOnInit(): void {
+
+  
     this.productService.getAllProducts().subscribe(result=> {this.products = result; console.log(this.products)})
    
   }

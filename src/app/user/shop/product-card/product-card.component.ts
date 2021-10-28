@@ -13,13 +13,17 @@ export class ProductCardComponent implements OnInit {
 
   quantity:number = 1
 
+  
+
   @Input() product?:Product;
 
   ngOnInit(): void {
-    console.log(this.product)
+   
   }
 
   addItemToCart(pid:any, quantity:number):void{
-    this.productService.addProductToCart({pid, quantity}).subscribe(result => console.log(result))
+     let uid = localStorage.getItem("uid")
+     let data = { pid, quantity}
+    this.productService.addProductToCart(data, uid).subscribe(result => console.log(result))
   }
 }
