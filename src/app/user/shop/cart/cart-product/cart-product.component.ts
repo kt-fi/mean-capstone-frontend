@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ɵɵqueryRefresh } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class CartProductComponent implements OnInit {
   @Input() products?:any[];
 
 
-  constructor(public productService:ProductService) { }
+  constructor(public productService:ProductService, public router:Router) { }
 
 
   ngOnInit(): void {
@@ -30,12 +32,11 @@ export class CartProductComponent implements OnInit {
   }
 
   removeItemFromCart(id:string){
-
     this.productService.removeItemFromCart(id, this.uid).subscribe(result => {
-      this.products = result;
+      
+      this.products = result.products;
       this.updateTotalCart(result)
       this.noItems()
-      
     });
 
   
