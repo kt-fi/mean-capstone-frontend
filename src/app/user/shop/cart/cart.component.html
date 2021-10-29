@@ -1,4 +1,13 @@
 <h1>Cart</h1>
 
-<div *ngFor="let product of products">{{product.pname}} <button class="btn btn-primary" (click)="removeItemFromCart(product.id)">delete</button></div>
-{{msg}}
+<div class="container">
+    <div class="row">
+      <div class="col-md-5" *ngIf="products">
+        <app-cart-product [products]="products"></app-cart-product>
+      </div>
+      <div class="col-md-5" *ngIf="products">
+        <app-cart-detail [products]="products"></app-cart-detail>
+      </div>
+
+    </div>
+  </div>

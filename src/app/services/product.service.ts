@@ -8,6 +8,8 @@ import { CartProduct } from '../models/cart-product';
 })
 export class ProductService {
 
+  cartTotal?:number;
+
   constructor(private http:HttpClient, ) { }
 
   getAllProducts():Observable<Product[]>{
@@ -35,5 +37,5 @@ export class ProductService {
     return product;
   }
 
- 
+  
 }

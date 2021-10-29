@@ -17,7 +17,6 @@ export class CartComponent implements OnInit {
   msg:string = ""
   ngOnInit(): void {
     this.productService.getUserCartList(this.uid).subscribe(result =>{ 
-      console.log(result)
       this.products = result})
   }
 

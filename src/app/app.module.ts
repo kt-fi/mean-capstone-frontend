@@ -17,6 +17,8 @@ import { ProductCardComponent } from './user/shop/product-card/product-card.comp
 import { ProductsComponent } from './admin/products/products.component';
 import { CartComponent } from './user/shop/cart/cart.component';
 import { WishListComponent } from './user/shop/wish-list/wish-list.component';
+import { CartProductComponent } from './user/shop/cart/cart-product/cart-product.component';
+import { CartDetailComponent } from './user/shop/cart/cart-detail/cart-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { WishListComponent } from './user/shop/wish-list/wish-list.component';
     ProductCardComponent,
     ProductsComponent,
     CartComponent,
-    WishListComponent
+    WishListComponent,
+    CartProductComponent,
+    CartDetailComponent
   ],
   imports: [
     BrowserModule,

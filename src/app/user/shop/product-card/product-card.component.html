@@ -10,8 +10,10 @@
         <p>{{product.description}}</p>
         <h5>Price:</h5>
         <h6>${{product.price}}</h6>
+        
+        <input type="number" [(ngModel)]="quantity">
         <div class="product-btn">
-            <button class="btn btn-primary" (click)="addItemToCart(product, quantity)">Cart</button>
+            <button class="btn btn-primary" (click)="addItemToCart(product)">Cart</button>
             <button class="btn btn-warning" (click)="addItemToWishList(product)">Want List</button>    
         </div>
     </div>

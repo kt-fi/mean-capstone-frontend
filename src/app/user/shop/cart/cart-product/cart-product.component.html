@@ -1,0 +1,7 @@
+<div class="" style="background-color: red">
+<h1>products</h1>
+<div *ngIf="products">
+    <div *ngFor="let product of products">{{product.pname}} <button class="btn btn-primary" (click)= removeItemFromCart(product.id)>Delete Item</button></div>
+</div>
+
+</div>
