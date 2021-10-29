@@ -1,7 +1,25 @@
-<div class="" style="background-color: red">
-<h1>products</h1>
+<div class="pt-5 cart-detail">
+<h3>Your Cart: </h3>
 <div *ngIf="products">
-    <div *ngFor="let product of products">{{product.pname}} <button class="btn btn-primary" (click)= removeItemFromCart(product.id)>Delete Item</button></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngFor="let product of products" class="col-12 cart-product" >
+                <div class="product-detail">
+                    <div class="product-detail-text">
+                        <h4 class="">{{product.pname}}</h4>
+                        <p>Quantity: {{product.quantity}}</p>
+                        <p><i>Price x Unit: {{product.price |  currency: 'EUR':true}}</i></p>
+                        <p><b>Total: {{product.price * product.quantity |  currency: 'EUR':true}}</b></p>
+                    </div>
+                    
+                    <img [src]="product.pimage" class="product-image" alt="">
+                </div>
+                <button class="btn btn-primary remove-btn" (click)= removeItemFromCart(product.id)>Remove Item</button>
+            </div>
+        </div>
+        
+    </div>
+    
 </div>
-
+{{message}}
 </div>

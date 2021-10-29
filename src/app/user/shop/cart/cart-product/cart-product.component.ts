@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,20 +10,32 @@ export class CartProductComponent implements OnInit {
 
 
   uid:any = localStorage.getItem("uid")
-
+  message:string = ""
   @Input() products?:any[];
+
 
   constructor(public productService:ProductService) { }
 
 
   ngOnInit(): void {
     this.updateTotalCart(this.products)
+    this.noItems()
+  }
+
+  noItems():string{
+    if(this.products?.length == 0){
+        this.message ="There are no Items in your Cart";
+      }
+      return this.message;
   }
 
   removeItemFromCart(id:string){
+
     this.productService.removeItemFromCart(id, this.uid).subscribe(result => {
-      this.products = result
+      this.products = result;
       this.updateTotalCart(result)
+      this.noItems()
+      
     });
 
   

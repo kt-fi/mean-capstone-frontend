@@ -1,3 +1,31 @@
-<div class="" *ngIf="products">
-<div>{{total}}</div>
-</div>
+<div class="container mt-5 cart-detail" *ngIf="products">
+<h3>Cart Details:</h3>
+
+<h5>Your Cart Total Is:  {{total |  currency: 'EUR':true}}</h5>
+
+
+<ng-template [ngIf]="address" [ngIfElse]="form">
+    <div class="mt-5">
+      {{address}}
+    </div>
+  </ng-template>
+  
+  <ng-template #form>
+    <div>
+      Please Fill form for delivery Address!
+
+      <form action="" [formGroup]="addressRef" (ngSubmit)="submitForm()" class="mt-5">
+          <label for="street" class="form-label">Street Name</label>
+          <input type="text" id="street" class="form-control" formControlName="street">
+          <label for="city" class="form-label">City</label>
+          <input type="text" id="city" class="form-control" formControlName="city"> 
+          <label for="zip" class="form-label">Zip Code</label>
+          <input type="text" id="zip" class="form-control"  formControlName="zip">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" id="country" class="form-control" formControlName="country">
+
+          <button class="btn btn-success" type="submit">Send</button>
+          <button class="btn btn-warning" type="Clear">Clear Form</button>
+      </form>
+    </div>
+  </ng-template>

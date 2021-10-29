@@ -1,0 +1,26 @@
+.cart-product{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+    margin: 15px;
+}
+
+.product-detail{
+    display: flex;
+    width: 75%;
+
+}
+
+.product-detail-text{
+    width: 50%;
+}
+
+.product-image{
+    width: 50%;
+}
+
+.remove-btn{
+    height: 50px;
+    justify-self: center;
+    align-self: center;
+}
