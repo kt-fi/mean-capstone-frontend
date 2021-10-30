@@ -5,8 +5,15 @@
 
 
 <ng-template [ngIf]="address" [ngIfElse]="form">
+    
     <div class="mt-5">
-      {{address}}
+        <h6>Delivery Address:</h6>
+      <p>{{address.street}}</p>
+      <p>{{address.city}}</p>
+      <p>{{address.zip}}</p>
+      <p>{{address.country}}</p>
+      <button class="btn btn-success">Confirm Purchase</button>
+      <button class="btn btn-warning" (click)="changeAddress()">Change Address</button>
     </div>
   </ng-template>
   

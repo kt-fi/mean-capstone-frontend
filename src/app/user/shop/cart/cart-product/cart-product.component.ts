@@ -35,7 +35,7 @@ export class CartProductComponent implements OnInit {
     this.productService.removeItemFromCart(id, this.uid).subscribe(result => {
       
       this.products = result.products;
-      this.updateTotalCart(result)
+      this.updateTotalCart(result.products)
       this.noItems()
     });
 

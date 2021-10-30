@@ -24,7 +24,8 @@ export class SignupComponent implements OnInit {
 
   enterUserPage(data:any){
     this.userType = data.data.utype;
-    this.uid =data.data.uid
+    this.uid = data.data.uid
+    this.userService.user = data.data;
     localStorage.setItem("user", data.data.uname)
     localStorage.setItem("uid", data.data.uid)
     localStorage.setItem("token", data.token)

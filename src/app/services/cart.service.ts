@@ -8,7 +8,6 @@ import { CartProduct } from '../models/cart-product';
 })
 export class CartService {
 
-  cart?:CartProduct[]
 
   constructor(public http: HttpClient) { }
 
