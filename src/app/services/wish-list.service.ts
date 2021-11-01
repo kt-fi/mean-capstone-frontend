@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CartProduct } from '../models/cart-product';
-import { Product } from '../models/product';
+
+import { WishlistProduct } from '../models/wishlist-product';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,14 @@ export class WishListService {
 
   constructor(public http:HttpClient) { }
 
-  addProductToWishList(data:CartProduct, uid:any):Observable<CartProduct>{
-    let product = this.http.put<CartProduct>(`http://localhost:3001/users/addProductToWishList/${uid}`, data);
+  addProductToWishList(data:WishlistProduct, uid:any):Observable<WishlistProduct>{
+    let product = this.http.put<WishlistProduct>(`http://localhost:3001/wishList/addProductToWishList/${uid}`, data);
     return product;
+  }
+
+  getWishList(uid:string):Observable<WishlistProduct[]>{
+    let wishList = this.http.get<WishlistProduct[]>(`http://localhost:3001/wishList/getWishList/${uid}`)
+    return wishList;
   }
 
 }
