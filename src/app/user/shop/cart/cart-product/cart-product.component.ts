@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ɵɵqueryRefresh } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 import { ProductService } from 'src/app/services/product.service';
 
@@ -16,7 +17,7 @@ export class CartProductComponent implements OnInit {
   @Input() products?:any[];
 
 
-  constructor(public productService:ProductService, public router:Router) { }
+  constructor(public cartService:CartService, public router:Router) { }
 
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class CartProductComponent implements OnInit {
   }
 
   removeItemFromCart(id:string){
-    this.productService.removeItemFromCart(id, this.uid).subscribe(result => {
+    this.cartService.removeItemFromCart(id, this.uid).subscribe(result => {
       
       this.products = result.products;
       this.updateTotalCart(result.products)
@@ -50,7 +51,7 @@ export class CartProductComponent implements OnInit {
     }
     if(subTotal){
       console.log(subTotal)
-      this.productService.cartTotal = subTotal.reduce((a: any,b: any) => a+b,0)
+      this.cartService.cartTotal = subTotal.reduce((a: any,b: any) => a+b,0)
     }
   }
 }

@@ -23,7 +23,7 @@ export class CartDetailComponent implements OnInit {
   }
 
   get total(){
-    return this.productService.cartTotal
+    return this.cartService.cartTotal
   }
 
   uid:any = localStorage.getItem("uid");

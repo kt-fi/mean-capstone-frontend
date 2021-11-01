@@ -1,12 +1,19 @@
 
 <div class="container">
     <div class="row">
-      <div class="col-md-6" *ngIf="products">
+        <ng-template [ngIf]="products" [ngIfElse]="noCart">
+      <div class="col-md-6">
         <app-cart-product [products]="products"></app-cart-product>
       </div>
-      <div class="col-md-6" *ngIf="products">
+      <div class="col-md-6">
         <app-cart-detail [products]="products"></app-cart-detail>
       </div>
+</ng-template>
 
+<ng-template #noCart>
+    <div class="col-md-6 mt-5">
+    You have yet to select any items for purchase!
+</div>
+</ng-template>
     </div>
   </div>

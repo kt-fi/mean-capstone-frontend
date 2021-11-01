@@ -18,11 +18,11 @@ const routes: Routes = [
     {path:"signup", component: SignupComponent},
     {path:"", redirectTo:"signup", pathMatch:"full"}
   ]},
-  {path:"dashboard", component: MainComponent, children:[
+  {path:"dashboard", component: MainComponent, canActivate:[AuthGuard], children:[
     {path:"user", component: UserDashboardComponent, children:[
       { path:"shop", component: ShopComponent},
-      { path:"cart", component: CartComponent, canActivate:[AuthGuard]},
-      { path:"wishList", component: WishListComponent, canActivate:[AuthGuard]},
+      { path:"cart", component: CartComponent},
+      { path:"wishList", component: WishListComponent},
       { path:"", redirectTo: "shop", pathMatch:"full"}
     ]},
     {path:"admin", component: AdminDashboardComponent, children: [

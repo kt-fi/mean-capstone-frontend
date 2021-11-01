@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/models/cart-product';
 import { Product } from 'src/app/models/product';
-import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
+
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductCardComponent implements OnInit {
 
-  constructor(private productService:ProductService) { }
+  constructor(private cartService:CartService) { }
 
   quantity:number = 0
 
@@ -32,6 +33,6 @@ export class ProductCardComponent implements OnInit {
   addItemToCart(product:Product):void{
     let productData = new CartProduct(product.pid, product.pname, product.pimage, this.quantity, product.price);
     let uid = localStorage.getItem("uid")
-    this.productService.addProductToCart(productData, uid).subscribe(result => console.log(result))
+    this.cartService.addProductToCart(productData, uid).subscribe(result => console.log(result))
   }
 }
