@@ -11,11 +11,17 @@ export class HeaderComponent implements OnInit {
 
   constructor(public userService:UserServiceService) { }
     
-  username:any = localStorage.getItem("user");
-
-  ngOnInit(): void {
-
-
+  get username():any{
+    return this.userService.username;
   }
 
+  ngOnInit(): void {
+  }
+
+  logout():void{
+    localStorage.removeItem("user");
+    localStorage.removeItem("uid");
+    localStorage.removeItem("token")
+    this.userService.username=""
+  }
 }

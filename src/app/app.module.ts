@@ -19,6 +19,7 @@ import { CartComponent } from './user/shop/cart/cart.component';
 import { WishListComponent } from './user/shop/wish-list/wish-list.component';
 import { CartProductComponent } from './user/shop/cart/cart-product/cart-product.component';
 import { CartDetailComponent } from './user/shop/cart/cart-detail/cart-detail.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { CartDetailComponent } from './user/shop/cart/cart-detail/cart-detail.co
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

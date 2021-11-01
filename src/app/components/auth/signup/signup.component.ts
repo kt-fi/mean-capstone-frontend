@@ -29,6 +29,7 @@ export class SignupComponent implements OnInit {
     localStorage.setItem("user", data.data.uname)
     localStorage.setItem("uid", data.data.uid)
     localStorage.setItem("token", data.token)
+    this.userService.username = data.data.uname;
     this.router.navigate([`dashboard/${this.userType}`])
   }
 

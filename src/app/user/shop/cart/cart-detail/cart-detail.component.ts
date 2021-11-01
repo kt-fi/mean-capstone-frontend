@@ -35,6 +35,7 @@ export class CartDetailComponent implements OnInit {
   }
 
   addressRef = new FormGroup({
+    fullName: new FormControl(),
     street: new FormControl(),
     city: new FormControl(),
     zip: new FormControl(),

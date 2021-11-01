@@ -8,6 +8,7 @@
     
     <div class="mt-5">
         <h6>Delivery Address:</h6>
+        <p><b class="mt-3 m5-3">{{address.fullName}}</b></p>
       <p>{{address.street}}</p>
       <p>{{address.city}}</p>
       <p>{{address.zip}}</p>
@@ -22,6 +23,8 @@
       Please Fill form for delivery Address!
 
       <form action="" [formGroup]="addressRef" (ngSubmit)="submitForm()" class="mt-5">
+        <label for="fillName" class="form-label">Full Name</label>
+        <input type="text" id="fullName" class="form-control" formControlName="fullName">
           <label for="street" class="form-label">Street Name</label>
           <input type="text" id="street" class="form-control" formControlName="street">
           <label for="city" class="form-label">City</label>

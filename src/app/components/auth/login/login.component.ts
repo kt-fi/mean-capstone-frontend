@@ -20,11 +20,12 @@ export class LoginComponent implements OnInit {
 
   enterUserPage(data:any){
     this.userType = data.user.utype;
-    this.uid =data.user.uid
+    this.uid = data.user.uid
     this.userService.user = data.user;
     localStorage.setItem("user", data.user.uname)
     localStorage.setItem("uid", data.user.uid)
     localStorage.setItem("token", data.token)
+    this.userService.username = data.user.uname;
     this.router.navigate([`dashboard/${this.userType}`])
   }
 

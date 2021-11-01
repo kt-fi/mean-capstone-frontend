@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Chris' Groceries</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      
+      <div class="" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" routerLink="dashboard/user/shop">Home</a>
           <a class="nav-link" routerLink="dashboard/user/wishList">Wish List</a>
           <a class="nav-link" routerLink="dashboard/user/cart">Basket</a>
           <a class="nav-link disabled">{{username}}</a>
+          <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
         </div>
+        
       </div>
     </div>
   </nav>
