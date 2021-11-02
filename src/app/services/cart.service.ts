@@ -9,7 +9,12 @@ import { Product } from '../models/product';
 })
 export class CartService {
 
+
+  products?:any
+
   cartTotal?:number;
+
+  cartInfo?:any;
 
   constructor(public http: HttpClient) { }
 
@@ -18,15 +23,29 @@ export class CartService {
       return this.http.put(`http://localhost:3001/users/${uid}/addAddress`, {address})
   }
   
+
+  
+  getUserCartList(uid:string){
+   this.http.get<any>(`http://localhost:3001/cart/getUserCartList/${uid}`).subscribe(result =>{
+     this.products = result
+     
+    })
+   
+  }
+
   
 
-  getUserCartList(uid:string):Observable<any>{
-    let cartList = this.http.get<any>(`http://localhost:3001/cart/getUserCartList/${uid}`)
-    return cartList;
-  }
+  // getUserCartList(uid:string):Observable<any>{
+  //   let cartList = this.http.get<any>(`http://localhost:3001/cart/getUserCartList/${uid}`)
+  //   return cartList;
+  // }
 
   removeItemFromCart(itemId:string, uid:string):Observable<any>{
     let itemRemoved = this.http.delete<any>(`http://localhost:3001/cart/deleteCartItem/${uid}/${itemId}`)
     return itemRemoved;
   }
+
+ 
+
+
 }
