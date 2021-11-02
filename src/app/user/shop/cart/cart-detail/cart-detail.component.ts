@@ -13,7 +13,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class CartDetailComponent implements OnInit {
 
-  @Input() products?:CartProduct[];
+ 
   subTotal?:number[];
   
   address?:any;
@@ -28,7 +28,7 @@ export class CartDetailComponent implements OnInit {
 
   uid:any = localStorage.getItem("uid");
 
-  constructor(public productService:ProductService, public cartService:CartService, public userService:UserServiceService) { }
+  constructor( public cartService:CartService, public userService:UserServiceService) { }
 
   ngOnInit(): void {
     console.log(this.user)

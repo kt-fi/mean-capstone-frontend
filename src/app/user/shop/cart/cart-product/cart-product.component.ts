@@ -34,7 +34,6 @@ export class CartProductComponent implements OnInit {
 
   removeItemFromCart(id:string){
     this.cartService.removeItemFromCart(id, this.uid).subscribe(result => {
-      
       this.products = result.products;
       this.updateTotalCart(result.products)
       this.noItems()
@@ -44,7 +43,6 @@ export class CartProductComponent implements OnInit {
   }
 
   updateTotalCart(data:any){
-    console.log(data)
     let subTotal
     if(data){
       subTotal = data.map((product: { price: number; quantity:number }) => product.price * product.quantity);

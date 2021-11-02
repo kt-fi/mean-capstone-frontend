@@ -19,7 +19,7 @@
         </div>
         
         <div class="product-btn">
-            <button class="btn btn-primary" (click)="addItemToCart(product)">Cart</button>
+            <button class="btn btn-primary" (click)="addItemToCart(product)" [disabled]="quantity < 1">Cart</button>
             <button class="btn btn-warning" (click)="addItemToWishList(product)">Want List</button>    
         </div>
     </div>

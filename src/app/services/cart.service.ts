@@ -18,10 +18,7 @@ export class CartService {
       return this.http.put(`http://localhost:3001/users/${uid}/addAddress`, {address})
   }
   
-  addProductToCart(data:any, uid:any):Observable<Product>{
-    let product = this.http.put<Product>(`http://localhost:3001/cart/addProductToCart/${uid}`, data);
-    return product;
-  }
+  
 
   getUserCartList(uid:string):Observable<any>{
     let cartList = this.http.get<any>(`http://localhost:3001/cart/getUserCartList/${uid}`)

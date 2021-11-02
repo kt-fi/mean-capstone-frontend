@@ -20,6 +20,7 @@ import { WishListComponent } from './user/shop/wish-list/wish-list.component';
 import { CartProductComponent } from './user/shop/cart/cart-product/cart-product.component';
 import { CartDetailComponent } from './user/shop/cart/cart-detail/cart-detail.component';
 import { AuthGuard } from './guards/auth.guard';
+import { PaymentComponent } from './user/shop/payment/payment.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { AuthGuard } from './guards/auth.guard';
     WishListComponent,
     CartProductComponent,
     CartDetailComponent,
+    PaymentComponent,
   
   ],
   imports: [

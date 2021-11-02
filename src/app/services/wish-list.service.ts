@@ -21,4 +21,9 @@ export class WishListService {
     return wishList;
   }
 
+  deleteWishListItem(uid:string, productId:string):Observable<any>{
+    let product = this.http.delete<any>(`http://localhost:3001/wishList/deleteWishListItem/${uid}/${productId}`)
+    return product;
+  }
+
 }

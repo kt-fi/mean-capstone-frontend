@@ -16,14 +16,13 @@ export class CartComponent implements OnInit {
 
   products?:any[];
   msg:string = ""
+  
   ngOnInit(): void {
     this.cartService.getUserCartList(this.uid).subscribe(result =>{ 
       this.products = result})
   }
 
-  removeItemFromCart(itemId:string):void{
-    this.cartService.removeItemFromCart(itemId, this.uid).subscribe(result => this.products = result)
-  }
+ 
 
 
 }

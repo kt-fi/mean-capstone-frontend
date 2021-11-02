@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/models/cart-product';
 import { Product } from 'src/app/models/product';
 import { WishlistProduct } from 'src/app/models/wishlist-product';
-import { CartService } from 'src/app/services/cart.service';
+import { ProductService } from 'src/app/services/product.service';
 import { WishListService } from 'src/app/services/wish-list.service';
 
 
@@ -14,7 +14,7 @@ import { WishListService } from 'src/app/services/wish-list.service';
 })
 export class ProductCardComponent implements OnInit {
 
-  constructor(private cartService:CartService, public wishlistService:WishListService) { }
+  constructor(private productService:ProductService, public wishlistService:WishListService) { }
 
   quantity:number = 0
 
@@ -27,7 +27,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   addItemToWishList(product:Product):void{
-    let productData = new WishlistProduct(product.pid, product.pname, product.pimage)
+    let productData = new WishlistProduct(product.pid, product.pname, product.pimage, product.price)
     let uid = localStorage.getItem("uid")
    this.wishlistService.addProductToWishList(productData, uid).subscribe(result => console.log(result))
   }
@@ -35,6 +35,6 @@ export class ProductCardComponent implements OnInit {
   addItemToCart(product:Product):void{
     let productData = new CartProduct(product.pid, product.pname, product.pimage, this.quantity, product.price);
     let uid = localStorage.getItem("uid")
-    this.cartService.addProductToCart(productData, uid).subscribe(result => console.log(result))
+    this.productService.addProductToCart(productData, uid).subscribe(result => console.log(result))
   }
 }
