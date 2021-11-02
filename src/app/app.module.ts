@@ -23,6 +23,7 @@ import { PaymentComponent } from './user/shop/payment/payment.component';
 import { RouterModule } from '@angular/router';
 import { ProductControlComponent } from './admin/product-control/product-control.component';
 import { ProductControlCardComponent } from './components/product-control-card/product-control-card.component';
+import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ProductControlCardComponent } from './components/product-control-card/p
     PaymentComponent,
     ProductControlComponent,
     ProductControlCardComponent,
+    ProductEditComponent,
 
   
   ],

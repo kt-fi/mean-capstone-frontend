@@ -25,5 +25,10 @@ export class ProductService {
   getProductById(pid:string):Observable<Product>{
     return this.http.get<Product>(`http://localhost:3001/products/getProductById/${pid}`)
   }
+
+  updateProduct(product:Product):Observable<Product>{
+    let updatedProduct = this.http.put<Product>(`http://localhost:3001/products/editProduct/${product.pid}`, product);
+    return updatedProduct;
+  }
   
 }

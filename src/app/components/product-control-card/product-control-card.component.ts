@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,14 +11,14 @@ export class ProductControlCardComponent implements OnInit {
 
   @Input() product:any;
 
-  constructor(public productService:ProductService) { }
+  constructor(public productService:ProductService, public router:Router) { }
 
   ngOnInit(): void {
   }
 
 
   editProduct(pid:string):void{
-    this.productService.getProductById(pid).subscribe(result => console.log(result))
+    this.router.navigate([`dashboard/admin/editProduct/${pid}`])
   }
 
 }

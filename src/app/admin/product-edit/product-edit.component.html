@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+       <div *ngIf="product">
+            <h1>Edit: {{product.pname}}</h1>
+            <form #formRef="ngForm" (ngSubmit)="submitUpdate(formRef)" action="">
+                <label for="">Product Name:</label>
+                <input type="text" name="pname" id=""  [(ngModel)]="product.pname" ngModel>
+                <label for="">Description:</label>
+                <input type="text" name="description" id="" [(ngModel)]="product.description" ngModel>
+                <label for="">Price:</label>
+                <input type="number" name="price" id="" [(ngModel)]="product.price" ngModel>
+                <label for="">Image:</label>
+                <input type="text" name="pimage" id="" [(ngModel)]="product.pimage" ngModel>
+                
+                <input type="submit" class="btn btn-success">
+            </form>
+        </div> 
+    </div>
+</div>
+
+
