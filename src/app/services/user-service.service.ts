@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
@@ -18,18 +19,18 @@ export class UserServiceService {
 
  
   createUser(newUser:any):Observable<any>{
-    this.user = this.http.post<User>("http://localhost:3001/users/createUser", newUser);
+    this.user = this.http.post<User>(`${environment.apiUrl}/users/createUser`, newUser);
     return this.user;
   }
 
   findUser(user:any):Observable<any>{
-   let data = this.http.post<any>("http://localhost:3001/users/getUser", user);
+   let data = this.http.post<any>(`${environment.apiUrl}/users/getUser`, user);
    this.user = data;
    return this.user;
   }
 
    getUserAddress(uid:any):Observable<any>{
-    let address = this.http.get<any>(`http://localhost:3001/users/getUserAddress/${uid}`)
+    let address = this.http.get<any>(`${environment.apiUrl}/users/getUserAddress/${uid}`)
     return address;
    };
   }

@@ -25,12 +25,14 @@ export class LoginComponent implements OnInit {
     localStorage.setItem("user", data.user.uname)
     localStorage.setItem("uid", data.user.uid)
     localStorage.setItem("token", data.token)
+    localStorage.setItem("usertype", data.user.utype)
     this.userService.username = data.user.uname;
     this.router.navigate([`dashboard/${this.userType}`])
   }
 
   submitForm(loginRef:NgForm):void{
     this.userService.findUser(loginRef.value).subscribe((result) => {
+      console.log(result)
      if(!result.msg){
       this.enterUserPage(result)
     }else{

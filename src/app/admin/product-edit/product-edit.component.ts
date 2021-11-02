@@ -13,6 +13,7 @@ export class ProductEditComponent implements OnInit {
 
   productId?:any;
   product?:Product;
+  updated:boolean = false;
 
   constructor( public activatedRoute:ActivatedRoute, public productService:ProductService) { }
 
@@ -33,6 +34,7 @@ export class ProductEditComponent implements OnInit {
     let updateProduct = new Product(pid, pname, description, price, stock, pimage, offer)
     
     this.productService.updateProduct(updateProduct).subscribe(result => console.log(result))
+    this.updated = true;
   }
 
 }

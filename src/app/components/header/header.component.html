@@ -2,7 +2,8 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Chris' Groceries</a>
       
-      <div class="" id="navbarNavAltMarkup">
+      <ng-template  [ngIf]="type == 'user'" [ngIfElse]="admin">
+       <div class="" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" routerLink="dashboard/user/shop">Home</a>
           <a class="nav-link" routerLink="dashboard/user/wishList">Wish List</a>
@@ -11,6 +12,20 @@
           <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
         </div>
         
-      </div>
+      </div> 
+      </ng-template>
+      <ng-template  #admin>
+        <div class="" id="navbarNavAltMarkup">
+         <div class="navbar-nav">
+           <a class="nav-link active" aria-current="page" routerLink="dashboard/admin">Home</a>
+           <a class="nav-link" routerLink="dashboard/admin/productControl">Find Products</a>
+           <a class="nav-link" routerLink="dashboard/admin/productControl">New Product</a>
+           <a class="nav-link disabled">Admin Account</a>
+           <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
+         </div>
+         
+       </div> 
+       </ng-template>
+      
     </div>
   </nav>

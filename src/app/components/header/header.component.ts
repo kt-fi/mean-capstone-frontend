@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(public userService:UserServiceService) { }
   
-
+  type:any = localStorage.getItem("usertype")
 
   get username():any{
     return this.userService.username;
@@ -24,7 +24,10 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("user");
     localStorage.removeItem("uid");
     localStorage.removeItem("token")
+    
     this.userService.username=""
+    localStorage.setItem("usertype", "user")
     window.location.replace('/logout');
+
   }
 }

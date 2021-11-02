@@ -1,5 +1,6 @@
 <div class="container">
     <div class="row">
+        <ng-template [ngIf]="!updated" [ngIfElse]="updatedTemplate">
        <div *ngIf="product">
             <h1>Edit: {{product.pname}}</h1>
             <form #formRef="ngForm" (ngSubmit)="submitUpdate(formRef)" action="">
@@ -13,8 +14,14 @@
                 <input type="text" name="pimage" id="" [(ngModel)]="product.pimage" ngModel>
                 
                 <input type="submit" class="btn btn-success">
+                <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button>
             </form>
-        </div> 
+        </div> </ng-template>
+        <ng-template #updatedTemplate>
+            <h2>UPDATED SUCCESFULY!!</h2>
+            <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button>
+
+        </ng-template>
     </div>
 </div>
 
