@@ -14,15 +14,16 @@ export class CartComponent implements OnInit {
 
   uid:any = localStorage.getItem("uid")
 
-  products?:any[];
-  msg:string = ""
-  
-  ngOnInit(): void {
-    this.cartService.getUserCartList(this.uid).subscribe(result =>{ 
-      this.products = result})
+  get products(){
+    return this.cartService.products
   }
+  // products?:any[];
+  msg:string = ""
 
- 
-
-
+  ngOnInit(): void {
+    this.cartService.getUserCartList(this.uid)
+    
+  //   this.cartService.getUserCartList(this.uid).subscribe(result =>{ 
+  //     this.products = result})
+   }
 }

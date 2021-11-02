@@ -1,1 +1,9 @@
-<p>payment works!</p>
+<div *ngIf="products">
+<div *ngFor="let product of products">{{product.pname}}</div>
+</div>
+{{total}}
+
+<div *ngIf="address">
+    {{address.street}}
+  
+</div>

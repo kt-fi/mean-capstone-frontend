@@ -21,7 +21,7 @@ export class CartProductComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.updateTotalCart(this.products)
+    this.cartService.updateTotalCart(this.products)
     this.noItems()
   }
 
@@ -35,21 +35,23 @@ export class CartProductComponent implements OnInit {
   removeItemFromCart(id:string){
     this.cartService.removeItemFromCart(id, this.uid).subscribe(result => {
       this.products = result.products;
-      this.updateTotalCart(result.products)
+      // this.updateTotalCart(result.products)
       this.noItems()
+      this.cartService.updateTotalCart(result.products)
     });
-
+    
   
   }
 
-  updateTotalCart(data:any){
-    let subTotal
-    if(data){
-      subTotal = data.map((product: { price: number; quantity:number }) => product.price * product.quantity);
-    }
-    if(subTotal){
-      console.log(subTotal)
-      this.cartService.cartTotal = subTotal.reduce((a: any,b: any) => a+b,0)
-    }
-  }
+  // updateTotalCart(data:any){
+  //   let subTotal
+  //   if(data){
+  //     subTotal = data.map((product: { price: number; quantity:number }) => product.price * product.quantity);
+  //   }
+  //   if(subTotal){
+    
+  //     console.log(subTotal)
+  //     this.cartService.cartTotal = subTotal.reduce((a: any,b: any) => a+b,0)
+  //   }
+  // }
 }

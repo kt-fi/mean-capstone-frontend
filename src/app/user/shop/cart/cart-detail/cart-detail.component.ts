@@ -16,7 +16,9 @@ export class CartDetailComponent implements OnInit {
  
   subTotal?:number[];
   
-  address?:any;
+  get address(){
+    return this.cartService.address;
+  }
 
   get user():User{
     return this.userService.user;
@@ -44,11 +46,11 @@ export class CartDetailComponent implements OnInit {
 
   submitForm():void{
     let address = this.addressRef.value
-    this.cartService.addClientAddress(address, this.uid).subscribe(result => this.address = result)
+    this.cartService.addClientAddress(address, this.uid)
   }
 
   changeAddress():void{
-     this.address = null;
+     this.cartService.address = null
   }
 
   

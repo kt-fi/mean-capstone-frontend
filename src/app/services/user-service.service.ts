@@ -12,6 +12,7 @@ export class UserServiceService {
 
   user?:any;
   username?:string;
+  address?:any;
 
   constructor(public http: HttpClient) { }
 
