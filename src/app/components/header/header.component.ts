@@ -10,7 +10,9 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class HeaderComponent implements OnInit {
 
   constructor(public userService:UserServiceService) { }
-    
+  
+  userType:string = localStorage.getItem("userType")
+
   get username():any{
     return this.userService.username;
   }
@@ -23,5 +25,6 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("uid");
     localStorage.removeItem("token")
     this.userService.username=""
+    window.location.replace('/logout');
   }
 }
