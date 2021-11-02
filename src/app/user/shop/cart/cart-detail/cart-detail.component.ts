@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { CartProduct } from 'src/app/models/cart-product';
 import { User } from 'src/app/models/user';
 import { CartService } from 'src/app/services/cart.service';
@@ -30,7 +31,7 @@ export class CartDetailComponent implements OnInit {
 
   uid:any = localStorage.getItem("uid");
 
-  constructor( public cartService:CartService, public userService:UserServiceService) { }
+  constructor( public route:Router, public cartService:CartService, public userService:UserServiceService) { }
 
   ngOnInit(): void {
     console.log(this.user)
@@ -51,6 +52,10 @@ export class CartDetailComponent implements OnInit {
 
   changeAddress():void{
      this.cartService.address = null
+  }
+
+  payment(){
+    this.route.navigate(["/dashboard/user/payment"])
   }
 
   

@@ -13,7 +13,7 @@
       <p>{{address.city}}</p>
       <p>{{address.zip}}</p>
       <p>{{address.country}}</p>
-      <button class="btn btn-success">Confirm Purchase</button>
+      <a (click)="payment()" class="btn btn-success">Confirm Purchase</a>
       <button class="btn btn-warning" (click)="changeAddress()">Change Address</button>
     </div>
   </ng-template>

@@ -1,9 +1,50 @@
-<div *ngIf="products">
-<div *ngFor="let product of products">{{product.pname}}</div>
-</div>
-{{total}}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 col-sm-12 ">
+            <div *ngIf="products">
+                <h4>Your Order:</h4>
+            <table class="table">
+                <thead>
+                   <th>Product</th>
+                <th>Quantity</th>
+                <th>Total Price</th> 
+                </thead>
+                <tbody>
+                   <tr *ngFor="let product of products">
+                    <td>{{product.pname}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.quantity * product.price |   currency:'EUR':true }}</td>
+                </tr> 
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                           <b>Total:</b> 
+                        </td>
+                        <td>
 
-<div *ngIf="address">
-    {{address.street}}
+                        </td>
+                        <td>
+                           <b>{{total | currency: 'EUR':true }}</b> 
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        </div>
+<div class="col-md-6" *ngIf="address">
+  <div class="container" style="border-left: 1px solid rgba(0, 0, 0, 0.315); height: 80vh;">
+<h5> Delivery Address: </h5>
+<p> {{address.fullName}}</p>
+    <p> {{address.street}}</p>
+    <p> {{address.city}}</p>
+    <p> {{address.zip}}</p>
+    <p> {{address.country}}</p>
+  </div> 
   
 </div>
+    </div>
+</div>
+
+
+

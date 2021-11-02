@@ -11,9 +11,7 @@ export class PaymentComponent implements OnInit {
 
   uid:any = localStorage.getItem("uid")
 
-  get address():any{
-    return this.userService.address;
-  }
+ address:any;
 
   get total(){
     return this.cartService.cartTotal;
@@ -28,7 +26,7 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.getUserCartList(this.uid)
-    
+    this.userService.getUserAddress(this.uid).subscribe(result => this.address = result.address)
   }
 
 }

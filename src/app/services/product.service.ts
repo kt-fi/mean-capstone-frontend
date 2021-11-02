@@ -21,5 +21,9 @@ export class ProductService {
     let product = this.http.put<Product>(`http://localhost:3001/cart/addProductToCart/${uid}`, data);
     return product;
   }
+
+  getProductById(pid:string):Observable<Product>{
+    return this.http.get<Product>(`http://localhost:3001/products/getProductById/${pid}`)
+  }
   
 }

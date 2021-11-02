@@ -14,13 +14,15 @@ import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.com
 import { HeaderComponent } from './components/header/header.component';
 import { ShopComponent } from './user/shop/shop.component';
 import { ProductCardComponent } from './user/shop/product-card/product-card.component';
-import { ProductsComponent } from './admin/products/products.component';
 import { CartComponent } from './user/shop/cart/cart.component';
 import { WishListComponent } from './user/shop/wish-list/wish-list.component';
 import { CartProductComponent } from './user/shop/cart/cart-product/cart-product.component';
 import { CartDetailComponent } from './user/shop/cart/cart-detail/cart-detail.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PaymentComponent } from './user/shop/payment/payment.component';
+import { RouterModule } from '@angular/router';
+import { ProductControlComponent } from './admin/product-control/product-control.component';
+import { ProductControlCardComponent } from './components/product-control-card/product-control-card.component';
 
 
 @NgModule({
@@ -35,12 +37,14 @@ import { PaymentComponent } from './user/shop/payment/payment.component';
     HeaderComponent,
     ShopComponent,
     ProductCardComponent,
-    ProductsComponent,
     CartComponent,
     WishListComponent,
     CartProductComponent,
     CartDetailComponent,
     PaymentComponent,
+    ProductControlComponent,
+    ProductControlCardComponent,
+
   
   ],
   imports: [
@@ -48,7 +52,8 @@ import { PaymentComponent } from './user/shop/payment/payment.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

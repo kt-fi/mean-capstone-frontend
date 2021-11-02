@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(public userService:UserServiceService) { }
   
-  userType:string = localStorage.getItem("userType")
+
 
   get username():any{
     return this.userService.username;

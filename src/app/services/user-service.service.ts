@@ -27,4 +27,10 @@ export class UserServiceService {
    this.user = data;
    return this.user;
   }
-}
+
+   getUserAddress(uid:any):Observable<any>{
+    let address = this.http.get<any>(`http://localhost:3001/users/getUserAddress/${uid}`)
+    return address;
+   };
+  }
+
