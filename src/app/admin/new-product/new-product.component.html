@@ -1,17 +1,18 @@
 <div class="container">
-    <div class="row">
+    <div class="d-flex justify-content-center">
+   
         
-       <div>
+       <div class="col-md-6 col-sm-12 col-xs-12 mt-3">
             <h1>Add New Product To Database:</h1>
-            <form #formRef="ngForm" (ngSubmit)="submitUpdate(formRef)" action="">
-                <label for="">Product Name:</label>
-                <input type="text" name="pname" id=""  ngModel>
-                <label for="">Description:</label>
-                <input type="text" name="description" id="" ngModel>
-                <label for="">Price:</label>
-                <input type="number" name="price" id="" ngModel>
-                <label for="">Image:</label>
-                <input type="text" name="pimage" id="" ngModel>
+            <form #formRef="ngForm" (ngSubmit)="submit(formRef)" action="">
+                <label class="form-label" for="">Product Name:</label>
+                <input class="form-control" type="text" name="pname" id=""  ngModel>
+                <label class="form-label" for="">Description:</label>
+                <textarea class="form-control" name="description" id="" cols="30" rows="6" ngModel></textarea>
+                <label class="form-label" for="">Price:</label>
+                <input class="form-control" type="number" name="price" id="" ngModel>
+                <label class="form-label" for="">Image:</label>
+                <input class="form-control" type="text" name="pimage" [(ngModel)]="placeholderImage" id="" ngModel>
                 
                 <input type="submit" class="btn btn-success">
                 <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button>
@@ -21,7 +22,9 @@
     
 
         
-    </div>
+
+</div>
+
 </div>
 
 

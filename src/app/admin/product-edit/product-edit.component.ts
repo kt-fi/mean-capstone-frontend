@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductEditComponent implements OnInit {
 
+  token:any = localStorage.getItem("token")
   productId?:any;
   product?:Product;
   updated:boolean = false;
@@ -33,7 +34,7 @@ export class ProductEditComponent implements OnInit {
 
     let updateProduct = new Product(pid, pname, description, price, stock, pimage, offer)
     
-    this.productService.updateProduct(updateProduct).subscribe(result => console.log(result))
+    this.productService.updateProduct(updateProduct, this.token).subscribe(result => console.log(result))
     this.updated = true;
   }
 

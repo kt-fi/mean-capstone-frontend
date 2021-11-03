@@ -24,7 +24,7 @@
                          <input class="col-2" type="number" [(ngModel)]="quantity">   
                         </div>
                         <div>
-                            <button class="btn btn-primary remove-btn m-2" (click)="addToCart(product)">Add To Cart</button>
+                            <button class="btn btn-primary remove-btn m-2" [disabled]="quantity < 1" (click)="addToCart(product)">Add To Cart</button>
                             <button class="btn btn-warning remove-btn m-2" (click)="deleteFromWishList(product)">Remove From List</button>       
                         </div>             
                     </div>

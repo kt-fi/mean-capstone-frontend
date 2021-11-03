@@ -11,17 +11,20 @@
         <h5>Price:</h5>
         <h6>${{product.price}}</h6>
         
-        <div class="col-12 mt-3 mb-3">
+        <div class="col-12 align-bottom">
+             <div class="col-12 mt-3 mb-3">
             <label class="col-10" style="width: 40%;">
                 Quantity:
             </label>
          <input class="col-2" type="number" [(ngModel)]="quantity">   
         </div>
         
-        <div class="product-btn">
+        <div class="buttons">
             <button class="btn btn-primary" (click)="addItemToCart(product)" [disabled]="quantity < 1">Cart</button>
             <button class="btn btn-warning" (click)="addItemToWishList(product)">Want List</button>    
         </div>
+        </div>
+       
     </div>
    <div class="product-price" *ngIf="product.offer">
     Offer

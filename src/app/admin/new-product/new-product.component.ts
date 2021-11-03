@@ -15,6 +15,8 @@ export class NewProductComponent implements OnInit {
   token:any = localStorage.getItem("token")
   message?:any;
 
+  placeholderImage:string = "https://media.gettyimages.com/vectors/image-place-holder-with-a-gray-camera-icon-vector-id1226328537?k=20&m=1226328537&s=612x612&w=0&h=2klft8QdMSyDj3oAmFyRyD24Mogj2OygLWrX9Lk6oGQ="
+
   constructor( public activatedRoute:ActivatedRoute, public productService:ProductService) { }
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class NewProductComponent implements OnInit {
 
   }
 
-  submitUpdate(formRef:NgForm):void{
+  submit(formRef:NgForm):void{
     let pname = formRef.value.pname;
     let description = formRef.value.description;
     let price = formRef.value.price;

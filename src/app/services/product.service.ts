@@ -12,8 +12,8 @@ export class ProductService {
 
   constructor(private http:HttpClient, ) { }
 
-  getAllProducts():Observable<Product[]>{
-    let products = this.http.get<Product[]>("http://localhost:3001/products/getAllProducts");
+  getAllProducts(page:number, limit:number):Observable<Product[]>{
+    let products = this.http.get<Product[]>(`http://localhost:3001/products/getAllProducts?page=${page}&limit=${limit}`);
     return products;
   }
 
@@ -31,8 +31,8 @@ export class ProductService {
     return newProduct;
   }
 
-  updateProduct(product:Product):Observable<Product>{
-    let updatedProduct = this.http.put<Product>(`http://localhost:3001/products/editProduct/${product.pid}`, product);
+  updateProduct(product:Product, token:string):Observable<Product>{
+    let updatedProduct = this.http.put<Product>(`http://localhost:3001/products/editProduct/${product.pid}`, product,  {headers: {"Authorization" : token}});
     return updatedProduct;
   }
 

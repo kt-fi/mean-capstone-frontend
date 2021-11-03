@@ -1,13 +1,25 @@
 
 <div *ngIf="product">
-    {{product.pname}}
-    <ng-template [ngIf]="!msg" [ngIfElse]="deleted">
-      <button class="btn btn-secondary" (click)="editProduct(product.pid)">Edit</button>
-    <button class="btn btn-danger" (click)="deleteProduct(product.pid)">Delete Item</button>  
+  <div class="container">
+    <div class="row">
+      <div class="col md-4 col sm-1 mt-3 product-box">
+        <h3>{{product.pname}}</h3>
+        <p>{{product.description}}</p>
+        <img style="width: 100%" [src]="product.pimage" alt="">
+         <ng-template [ngIf]="!msg" [ngIfElse]="deleted">
+      <div class="buttons row">
+        <button class="btn btn-secondary col-md-5 col-sm-12 m-1" (click)="editProduct(product.pid)">Edit</button>
+        <button class="btn btn-danger col-md-5 col-sm-12 m-1" (click)="deleteProduct(product.pid)">Delete Item</button>  
+      </div>
     </ng-template>
     <ng-template #deleted>
-        {{msg.msg}}
+     <span style= "color:red">{{msg.msg}}</span>   
     </ng-template>
+      </div>
+    </div>
+  </div>  
+  
+   
     
 </div>
     

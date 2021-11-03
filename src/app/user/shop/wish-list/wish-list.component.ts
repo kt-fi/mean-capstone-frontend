@@ -53,7 +53,7 @@ export class WishListComponent implements OnInit {
 
   noItems():string{
     if(this.products?.length == 0){
-        this.message ="There are no Items in your Cart";
+        this.message ="There are no Items in your WishList";
       }
       return this.message;
   }
