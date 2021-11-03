@@ -2,24 +2,25 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Chris' Groceries</a>
       
-      <ng-template  [ngIf]="type == 'user'" [ngIfElse]="admin">
+      
+      <ng-template  [ngIf]="type == 'user' || type == 'none'" [ngIfElse]="admin">
        <div class="" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" routerLink="dashboard/user/shop">Home</a>
-          <a class="nav-link" routerLink="dashboard/user/wishList">Wish List</a>
-          <a class="nav-link" routerLink="dashboard/user/cart">Basket</a>
+          <a class="nav-link active" aria-current="page" routerLink="user/shop">Home</a>
+          <a class="nav-link" routerLink="user/wishList">Wish List</a>
+          <a class="nav-link" routerLink="user/cart">Basket</a>
           <a class="nav-link disabled">{{username}}</a>
           <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
         </div>
         
       </div> 
       </ng-template>
-      <ng-template  #admin>
+      <ng-template #admin>
         <div class="" id="navbarNavAltMarkup">
          <div class="navbar-nav">
-           <a class="nav-link active" aria-current="page" routerLink="dashboard/admin">Home</a>
-           <a class="nav-link" routerLink="dashboard/admin/productControl">Find Products</a>
-           <a class="nav-link" routerLink="dashboard/admin/productControl">New Product</a>
+           <a class="nav-link active" aria-current="page" routerLink="admin">Home</a>
+           <a class="nav-link" routerLink="admin/productControl">Find Products</a>
+           <a class="nav-link" routerLink="admin/addNewProduct">New Product</a>
            <a class="nav-link disabled">Admin Account</a>
            <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
          </div>

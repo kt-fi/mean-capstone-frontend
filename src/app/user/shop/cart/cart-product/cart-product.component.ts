@@ -22,7 +22,9 @@ export class CartProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.updateTotalCart(this.products)
-    this.noItems()
+    setTimeout(()=>{
+      this.noItems()
+    },0) 
   }
 
   noItems():string{
@@ -34,9 +36,15 @@ export class CartProductComponent implements OnInit {
 
   removeItemFromCart(id:string){
     this.cartService.removeItemFromCart(id, this.uid).subscribe(result => {
+      this.message = `Your product has been removed from the cart!!`;
+      setTimeout(()=>{
+        this.message = "";
+      },3000)
       this.products = result.products;
       // this.updateTotalCart(result.products)
-      this.noItems()
+      setTimeout(()=>{
+        this.noItems()
+      },3001) 
       this.cartService.updateTotalCart(result.products)
     });
     

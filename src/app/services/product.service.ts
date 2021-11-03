@@ -26,9 +26,19 @@ export class ProductService {
     return this.http.get<Product>(`http://localhost:3001/products/getProductById/${pid}`)
   }
 
+  createNewProduct(data:any, token:string):Observable<Product>{
+    let newProduct = this.http.post<Product>(`http://localhost:3001/products/createProduct`, data,  {headers: {"Authorization" : token}});
+    return newProduct;
+  }
+
   updateProduct(product:Product):Observable<Product>{
     let updatedProduct = this.http.put<Product>(`http://localhost:3001/products/editProduct/${product.pid}`, product);
     return updatedProduct;
+  }
+
+  deleteProduct(pid:string, token:string):Observable<any>{
+    let deletedProduct = this.http.delete<any>(`http://localhost:3001/products/deleteById/${pid}`,  {headers: {"Authorization" : token}});
+    return deletedProduct;
   }
   
 }

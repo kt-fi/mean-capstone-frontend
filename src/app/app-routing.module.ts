@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { NewProductComponent } from './admin/new-product/new-product.component';
 import { ProductControlComponent } from './admin/product-control/product-control.component';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -29,9 +30,10 @@ const routes: Routes = [
       { path:"", redirectTo: "shop", pathMatch:"full"}
     ]},
     {path:"admin", component: AdminDashboardComponent, children: [
-    { path:"productControl", component: ProductControlComponent, canActivate:[AuthGuard]},
-    { path: "editProduct/:pid", component: ProductEditComponent},
-    {path:"", redirectTo:"productControl", pathMatch:"full"}
+      { path:"productControl", component: ProductControlComponent, canActivate:[AuthGuard]},
+      { path: "editProduct/:pid", component: ProductEditComponent},
+      { path: "addNewProduct", component: NewProductComponent},
+      { path:"", redirectTo:"productControl", pathMatch:"full"}
   ]},
   ]},
   { path:"logout", redirectTo:"auth", pathMatch: "full"},

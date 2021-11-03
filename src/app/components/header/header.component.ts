@@ -18,7 +18,14 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
+    setTimeout(()=>{
+      this.type = localStorage.getItem("usertype")
+    },1000)
   }
+
+
+
 
   logout():void{
     localStorage.removeItem("user");
@@ -26,7 +33,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("token")
     
     this.userService.username=""
-    localStorage.setItem("usertype", "user")
+    localStorage.setItem("usertype", "none")
     window.location.replace('/logout');
 
   }

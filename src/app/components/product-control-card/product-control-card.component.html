@@ -1,6 +1,13 @@
 
-<div>
+<div *ngIf="product">
     {{product.pname}}
-    <button class="btn btn-secondary" (click)="editProduct(product.pid)">Edit</button>
+    <ng-template [ngIf]="!msg" [ngIfElse]="deleted">
+      <button class="btn btn-secondary" (click)="editProduct(product.pid)">Edit</button>
+    <button class="btn btn-danger" (click)="deleteProduct(product.pid)">Delete Item</button>  
+    </ng-template>
+    <ng-template #deleted>
+        {{msg.msg}}
+    </ng-template>
+    
 </div>
     

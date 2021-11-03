@@ -11,11 +11,18 @@ export class ProductControlCardComponent implements OnInit {
 
   @Input() product:any;
 
+  token:any = localStorage.getItem("token")
+  msg:any;
+
   constructor(public productService:ProductService, public router:Router) { }
 
   ngOnInit(): void {
   }
 
+  deleteProduct(pid:string):void{
+    this.productService.deleteProduct(pid, this.token).subscribe(result => this.msg = result)
+     
+  }
 
   editProduct(pid:string):void{
     this.router.navigate([`dashboard/admin/editProduct/${pid}`])

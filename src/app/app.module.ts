@@ -24,6 +24,7 @@ import { RouterModule } from '@angular/router';
 import { ProductControlComponent } from './admin/product-control/product-control.component';
 import { ProductControlCardComponent } from './components/product-control-card/product-control-card.component';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
+import { NewProductComponent } from './admin/new-product/new-product.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
     ProductControlComponent,
     ProductControlCardComponent,
     ProductEditComponent,
+    NewProductComponent,
 
   
   ],
