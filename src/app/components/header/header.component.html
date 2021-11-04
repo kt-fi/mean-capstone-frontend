@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Chris' Groceries</a>
+    <div class="container">
+      <a class="navbar-brand" style="padding-right: 30px;" href="#">Chris' Groceries</a>
       
       
       <ng-template  [ngIf]="type == 'user' || type == 'none'" [ngIfElse]="admin">
@@ -11,6 +11,7 @@
           <a class="nav-link" routerLink="user/cart">Basket</a>
           <a class="nav-link disabled">{{username}}</a>
           <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
+          
         </div>
         
       </div> 
@@ -23,6 +24,7 @@
            <a class="nav-link" routerLink="admin/addNewProduct">New Product</a>
            <a class="nav-link disabled">Admin Account</a>
            <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
+           
          </div>
          
        </div> 

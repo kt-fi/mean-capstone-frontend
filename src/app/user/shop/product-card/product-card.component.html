@@ -6,10 +6,16 @@
     </div>
     
     <div class="card-main">
-        <h4>{{product.pname}}</h4>
-        <p>{{product.description}}</p>
-        <h5>Price:</h5>
-        <h6>${{product.price}}</h6>
+        <div class="productName">
+            <h4 class="pt-2">{{product.pname}}</h4>
+        </div>
+        <div class="description">
+           <p>{{product.description}}</p> 
+        </div>
+        <div class="price">
+           <h6>Price: <span>{{product.price | currency:'EUR':true}}</span></h6> 
+            
+        </div>
         
         <div class="col-12 align-bottom">
              <div class="col-12 mt-3 mb-3">

@@ -12,8 +12,8 @@ export class ProductService {
 
   constructor(private http:HttpClient, ) { }
 
-  getAllProducts(page:number, limit:number):Observable<Product[]>{
-    let products = this.http.get<Product[]>(`http://localhost:3001/products/getAllProducts?page=${page}&limit=${limit}`);
+  getAllProducts(page:number, limit:number):Observable<any>{
+    let products = this.http.get<any>(`http://localhost:3001/products/getAllProducts?page=${page}&limit=${limit}`);
     return products;
   }
 

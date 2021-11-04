@@ -1,6 +1,17 @@
-<div class="container-fluid">
+<div class="container">
     <div class="products-container">
       <app-product-card *ngFor="let productEl of products"  [product]=productEl></app-product-card>  
     </div>
-    <button (click)="pageMinus()" [disabled]="!pageDown"><</button><button (click)="pagePlus()" [disabled]="!pageUp">></button>
+  <div>
+    <div class="pageBar mt-3">
+    <button class="page-link pageArrow" (click)="pageMinus()" [disabled]="!pageDown"><<</button>
+     
+    
+      <tr *ngFor="let page of pagination(totalPages); let i = index"> 
+        <button class="pageNumber page-link" (click)="choosePage(i+1)" [ngStyle]="pageNumber == i+1 ? {'background-color': 'gray'} : {'background-color': 'white'}">{{i +1}}</button>
+      </tr>
+    
+    <button class="page-link pageArrow" (click)="pagePlus()" [disabled]="!pageUp">>></button>
+  </div>
+  </div>
 </div>

@@ -14,7 +14,7 @@ export class ProductControlComponent implements OnInit {
   products?:Product[];
 
   ngOnInit(): void {
-    this.productService.getAllProducts(1,200).subscribe(result => this.products = result);
+    this.productService.getAllProducts(1,200).subscribe(result => this.products = result.products);
   }
 
 }
