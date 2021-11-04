@@ -30,10 +30,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+
+              "popper.js/dist/umd/popper.min.js",
+              "jquery/dist/jquery.min.js",
+              "bootstrap/dist/js/bootstrap.min.js"
+          
+            ]
           },
           "configurations": {
             "production": {

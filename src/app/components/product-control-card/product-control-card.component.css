@@ -1,6 +1,6 @@
 .product-box{
     position: relative;
-    border:1px solid black;
+    border:1px solid rgba(87, 87, 87, 0.582);
     border-radius: 5px;
     height: 400px;
 }
@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+button{
+    width:40%;
+}
+
 img{
     max-height:55%;;
 }
@@ -20,4 +24,10 @@ img{
     position: absolute;
     bottom: 5px;
     width: 100%
+}
+
+@media screen and (max-width: 650px) {
+    button{
+        width: 90%
+    }
 }

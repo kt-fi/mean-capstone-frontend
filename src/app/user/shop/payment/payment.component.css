@@ -1,0 +1,45 @@
+
+.header{
+    margin: 25px;
+    
+    font-size: 35px;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.address-container{
+    padding: 10px 20px;
+    margin-left: 50;
+    border-left: 1px solid rgba(0, 0, 0, 0.315); 
+    height: 80vh;
+    background-color: rgba(209, 209, 209, 0.103);
+}
+
+
+
+.address-content{
+    margin-left: 50px;;
+}
+
+
+@media screen and (max-width: 760px){
+    .address-container{
+        border-left: 0px;
+        height: min-content;
+    }
+
+    .address-content{
+        margin: 0;
+    }
+    
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}

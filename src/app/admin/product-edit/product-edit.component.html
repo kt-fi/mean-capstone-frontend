@@ -1,8 +1,9 @@
 <div class="d-flex justify-content-center">
     
-        <ng-template [ngIf]="!updated" [ngIfElse]="updatedTemplate">
+       
        <div class="col-md-6 col-sm-12 col-xs-12 mt-3" *ngIf="product">
-            <h1>Edit: {{product.pname}}</h1>
+            <h2 class="header">Edit: {{product.pname}}</h2>
+            <p style="color: red;">{{message}}</p>
             <form class="" #formRef="ngForm" (ngSubmit)="submitUpdate(formRef)" action="">
                 <label class="form-label" for="">Product Name:</label>
                 <input class="form-control" type="text" name="pname" id="" [(ngModel)]="product.pname" ngModel>
@@ -16,12 +17,11 @@
                 <button type="submit" class="btn btn-success m-1" value="Update Product">Update Product</button>
                 <button class="btn btn-secondary m-1" routerLink="/dashboard/admin/productControl">Back To Items List</button>
             </form>
-        </div> </ng-template>
-        <ng-template #updatedTemplate>
-            <h2>UPDATED SUCCESFULY!!</h2>
-            <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button>
+        </div> 
 
-        </ng-template>
+            <!-- <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button> -->
+
+
   
 </div>
 

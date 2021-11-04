@@ -1,6 +1,6 @@
-<div class="pt-5 cart-detail">
+<div class="pt-4 cart-detail">
    
-<h3>Your Cart: </h3> 
+<h2 class="header">Your Cart: </h2> 
 <p style="color: red;">{{message}}</p>
 <div *ngIf="products">
     <div class="container-fluid">
@@ -15,8 +15,9 @@
                     </div>
                     
                     <img [src]="product.pimage" class="product-image" alt="">
+                    <button class="btn btn-primary remove-btn" (click)= removeItemFromCart(product.id)>Remove Item</button>
                 </div>
-                <button class="btn btn-primary remove-btn" (click)= removeItemFromCart(product.id)>Remove Item</button>
+                
             </div>
         </div>
         

@@ -25,6 +25,10 @@ import { ProductControlComponent } from './admin/product-control/product-control
 import { ProductControlCardComponent } from './components/product-control-card/product-control-card.component';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 import { NewProductComponent } from './admin/new-product/new-product.component';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WishListCardComponent } from './user/shop/wish-list/wish-list-card/wish-list-card.component';
+
+
 
 
 @NgModule({
@@ -48,6 +52,9 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
     ProductControlCardComponent,
     ProductEditComponent,
     NewProductComponent,
+    WishListCardComponent,
+
+
 
   
   ],
@@ -57,7 +64,9 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgbCollapseModule,
+    NgbModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

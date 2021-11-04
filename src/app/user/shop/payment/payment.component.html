@@ -2,7 +2,7 @@
     <div class="row mt-5">
         <div class="col-md-6 col-sm-12 ">
             <div *ngIf="products">
-                <h4>Your Order:</h4>
+                <h4 class="header">YOUR ORDER:</h4>
             <table class="table">
                 <thead>
                    <th>Product</th>
@@ -33,13 +33,22 @@
         </div>
         </div>
 <div class="col-md-6" *ngIf="address">
-  <div class="container" style="border-left: 1px solid rgba(0, 0, 0, 0.315); height: 80vh;">
-<h5> Delivery Address: </h5>
-<p> {{address.fullName}}</p>
+  <div class="container address-container">
+      <h3 class="header">DELIVERY DETAILS</h3>
+
+<div class="address-content">
+    <h5 class="pb-4"> Delivery Address: </h5>
+    <p> {{address.fullName}}</p>
     <p> {{address.street}}</p>
     <p> {{address.city}}</p>
     <p> {{address.zip}}</p>
     <p> {{address.country}}</p>
+</div>
+<div class="buttons">
+    <button class="btn btn-success m-5">Finalize Purchase</button>
+    <button class="btn btn-warning m-5">Cancel Purchase</button>
+</div>
+
   </div> 
   
 </div>

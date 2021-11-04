@@ -1,4 +1,12 @@
+
 .cart-detail{
     height: 80vh;
     border-left: 1px solid rgba(0, 0, 0, 0.418);
+}
+
+@media screen and (max-width: 760px){
+    .cart-detail{
+        border-left: 0px;
+    }
+    
 }

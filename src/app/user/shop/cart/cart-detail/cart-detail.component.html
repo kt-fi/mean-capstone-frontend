@@ -1,13 +1,13 @@
 <div class="container mt-5 cart-detail">
-<h3>Cart Details:</h3>
+<h2 class="header">Cart Details:</h2>
 
-<h5>Your Cart Total Is:  {{total |  currency: 'EUR':true}}</h5>
+<h5 class="header">Your Cart Total Is:  {{total |  currency: 'EUR':true}}</h5>
 
 
 <ng-template [ngIf]="address" [ngIfElse]="form">
     
     <div class="mt-5">
-        <h6>Delivery Address:</h6>
+        <h6 class="header">Delivery Address:</h6>
         <p><b class="mt-3 m5-3">{{address.fullName}}</b></p>
       <p>{{address.street}}</p>
       <p>{{address.city}}</p>

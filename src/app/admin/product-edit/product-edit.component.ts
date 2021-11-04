@@ -15,6 +15,7 @@ export class ProductEditComponent implements OnInit {
   productId?:any;
   product?:Product;
   updated:boolean = false;
+  message:string ="";
 
   constructor( public activatedRoute:ActivatedRoute, public productService:ProductService) { }
 
@@ -34,7 +35,7 @@ export class ProductEditComponent implements OnInit {
 
     let updateProduct = new Product(pid, pname, description, price, stock, pimage, offer)
     
-    this.productService.updateProduct(updateProduct, this.token).subscribe(result => console.log(result))
+    this.productService.updateProduct(updateProduct, this.token).subscribe(result => this.message = "You have succesfuly updated the product", err=> this.message ="An error occured whist saving your product, please try again.")
     this.updated = true;
   }
 

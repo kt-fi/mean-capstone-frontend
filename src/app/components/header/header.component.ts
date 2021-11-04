@@ -10,7 +10,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class HeaderComponent implements OnInit {
 
   constructor(public userService:UserServiceService) { }
-  
+  isCollapsed:boolean = true;
   type:any = localStorage.getItem("usertype")
 
   get username():any{

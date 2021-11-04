@@ -1,32 +1,15 @@
 
 <div class="container">
     <div class="row">
-        <h2 class="m-4">Products You Like</h2>
+        <h2 class="m-4 header">Products You Like</h2>
 
         <p style="color:red">{{message}}</p>
         <div *ngIf="products">
             <div class="container-fluid">
                 <div class="row">
-                    <div *ngFor="let product of products" class="col-6 cart-product" >
-                        <div class="product-detail">
-                            <div class="product-detail-text">
-                                <h4 class="">{{product.pname}}</h4>
-                                
-                                
-                            </div>
-                            
-                            <img [src]="product.pimage" class="product-image" alt="">
-                        </div>
-                        <div class="col-12 mt-3 mb-3">
-                            <label class="col-10" style="width: 40%;">
-                                Quantity:
-                            </label>
-                         <input class="col-2" type="number" [(ngModel)]="quantity">   
-                        </div>
-                        <div>
-                            <button class="btn btn-primary remove-btn m-2" [disabled]="quantity < 1" (click)="addToCart(product)">Add To Cart</button>
-                            <button class="btn btn-warning remove-btn m-2" (click)="deleteFromWishList(product)">Remove From List</button>       
-                        </div>             
+                    <div *ngFor="let product of products">
+                        <app-wish-list-card [product]="product" (delete)="deleteFromWishList($event)" (add)="addToCart($event)"></app-wish-list-card>
+                                 
                     </div>
                 </div>
                 

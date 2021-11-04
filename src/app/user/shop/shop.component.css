@@ -1,3 +1,11 @@
+.header{
+    padding: 5px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .products-container{
     display: flex;
     flex-wrap: wrap;
