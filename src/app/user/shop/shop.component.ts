@@ -25,9 +25,6 @@ export class ShopComponent implements OnInit {
   constructor(private productService:ProductService) { }
   
   ngOnInit(): void {
-
-    
-  
     this.productService.getAllProducts(1, this.productsPerPage).subscribe((result)=> {
       this.products = result.products 
       this.totalPages = result.totalPages;
@@ -54,8 +51,6 @@ export class ShopComponent implements OnInit {
       this.errorMessage = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN LATER";
       this.products = undefined;
     })
-
-  
   }
 
   pagePlus(){

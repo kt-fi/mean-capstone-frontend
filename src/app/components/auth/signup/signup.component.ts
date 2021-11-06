@@ -5,7 +5,6 @@ import { User } from 'src/app/models/user';
 import { UserServiceService } from 'src/app/services/user-service.service';
 
 
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -35,7 +34,6 @@ export class SignupComponent implements OnInit {
   }
 
   submitForm(formRef:NgForm):any{
-
     let user = new User(formRef.value.uname,  formRef.value.email, "user", formRef.value.password);
     if(formRef.value.password != formRef.value.password2){
       return this.errorMsg = "Passwords must match"

@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
-    
-    <p class="serverError col-12">{{errorMsg}}</p>
-       <div class="col-md-6 col-sm-12 col-xs-12 mt-3" *ngIf="product">
+    <div class="col-md-6 col-sm-12 col-xs-12 mt-3">
+       <p class="col-12">{{errorMsg}}</p>
+       <div class="col-12" *ngIf="product">
             <h2 class="header">Edit: {{product.pname}}</h2>
             <p style="color: red;">{{message}}</p>
             <form class="" #formRef="ngForm" (ngSubmit)="submitUpdate(formRef)" action="">
@@ -18,11 +18,7 @@
                 <button class="btn btn-secondary m-1" routerLink="/dashboard/admin/productControl">Back To Items List</button>
             </form>
         </div> 
-
-            <!-- <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button> -->
-
-
-  
+    </div>
 </div>
 
 

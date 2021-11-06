@@ -1,7 +1,6 @@
 <div class="container">
     <div class="d-flex justify-content-center">
    
-        
        <div class="col-md-6 col-sm-12 col-xs-12 mt-3">
            <p class="serverError">{{errorMsg}}</p>
             <h1 class="header">Add New Product To Database:</h1>
@@ -15,18 +14,13 @@
                 <input class="form-control" type="number" name="price" id="" ngModel>
                 <label class="form-label" for="">Image:</label>
                 <input class="form-control" type="text" name="pimage" [(ngModel)]="placeholderImage" id="" ngModel>
-                
                 <input type="submit" class="btn btn-success">
                 <button class="btn btn-secondary" routerLink="/dashboard/admin/productControl">Back To Items List</button>
             </form>
+
             <p>{{message.msg}}</p>
         </div> 
-    
-
-        
-
-</div>
-
+    </div>
 </div>
 
 

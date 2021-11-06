@@ -61,7 +61,4 @@ export class CartDetailComponent implements OnInit {
   payment(){
     this.route.navigate(["/dashboard/user/payment"])
   }
-
-  
-
 }

@@ -1,7 +1,4 @@
-
-
 <div *ngIf="product"  class="product-card card">
-    
     <div class="image-container">
        <img [src]="product.pimage" alt="" class="product-image"> 
     </div>
@@ -15,7 +12,6 @@
         </div>
         <div class="price">
            <h6>Price: <span>{{product.price | currency:'EUR':true}}</span></h6> 
-            
         </div>
         
         <div class="col-12 align-bottom">
@@ -36,9 +32,6 @@
    <div class="product-price" *ngIf="product.offer">
     Offer
 </div> 
-
-
- 
 </div> 
 
  

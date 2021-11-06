@@ -17,14 +17,13 @@ export class ProductCardComponent implements OnInit {
 
   constructor(private productService:ProductService, public wishlistService:WishListService) { }
 
-  quantity:number = 0
-
-  
+  quantity:number = 0;
   errorMessage:string = ""
+
   @Input() product?:Product;
 
   ngOnInit(): void {
-   
+
   }
 
   addItemToWishList(product:Product):void{
@@ -32,8 +31,7 @@ export class ProductCardComponent implements OnInit {
     let uid = localStorage.getItem("uid")
    this.wishlistService.addProductToWishList(productData, uid).subscribe((result) => {
      console.log(result)
-    },(err)=> alert("there has been a server error, pleas try again later!"))
-                  
+    },(err)=> alert("there has been a server error, pleas try again later!"))              
   }
 
   addItemToCart(product:Product):void{
@@ -43,6 +41,4 @@ export class ProductCardComponent implements OnInit {
       console.log(result)
     },(err)=> alert("there has been a server error, pleas try again later!"))
   }
-
-
 }

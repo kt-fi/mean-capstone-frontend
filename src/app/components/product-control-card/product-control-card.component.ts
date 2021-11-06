@@ -24,7 +24,6 @@ export class ProductControlCardComponent implements OnInit {
     this.productService.deleteProduct(pid, this.token).subscribe((result) => {
       this.msg = result
     }, (err)=> alert("THERE HAS BEEN A SERVER ERROR PLEASE TRY AGAIN LATER"))
-     
   }
 
   editProduct(pid:string):void{

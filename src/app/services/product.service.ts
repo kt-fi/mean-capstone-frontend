@@ -37,8 +37,8 @@ export class ProductService {
     return updatedProduct;
   }
 
-  deleteProduct(pid:string, token:string):Observable<any>{
-    let deletedProduct = this.http.delete<any>(`http://localhost:3001/products/deleteById/${pid}`,  {headers: {"Authorization" : token}});
+  deleteProduct(pid:string, token:string):Observable<Product>{
+    let deletedProduct = this.http.delete<Product>(`${environment.apiUrl}/products/deleteById/${pid}`,  {headers: {"Authorization" : token}});
     return deletedProduct;
   }
   

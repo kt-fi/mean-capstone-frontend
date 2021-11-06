@@ -28,9 +28,6 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WishListCardComponent } from './user/shop/wish-list/wish-list-card/wish-list-card.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

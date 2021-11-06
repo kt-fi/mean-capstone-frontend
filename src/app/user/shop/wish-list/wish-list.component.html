@@ -1,11 +1,11 @@
 
 <p class="serverError col-12">{{message}}</p>
-        <h2 class="m-4 header">Products You Like</h2>
-            <div class="container">
-                <div class="grid">
-                    <app-wish-list-card *ngFor="let product of products" [product]="product" (delete)="deleteFromWishList($event)" (add)="addToCart($event)"></app-wish-list-card>  
-                </div>
+    <h2 class="m-4 header">Products You Like</h2>
+        <div class="container">
+            <div class="grid">
+                <app-wish-list-card *ngFor="let product of products" [product]="product" (delete)="deleteFromWishList($event)" (add)="addToCart($event)"></app-wish-list-card>  
             </div>
+        </div>
                 
                         
         

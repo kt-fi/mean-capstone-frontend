@@ -12,8 +12,10 @@ import { ProductService } from 'src/app/services/product.service';
 export class CartProductComponent implements OnInit {
 
 
-  uid:any = localStorage.getItem("uid")
-  message:string = ""
+  uid:any = localStorage.getItem("uid");
+
+  message:string = "";
+
   @Input() products?:any[];
 
 
@@ -47,19 +49,5 @@ export class CartProductComponent implements OnInit {
       },3001) 
       this.cartService.updateTotalCart(result.products)
     },(err)=> this.message = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN");
-    
-  
   }
-
-  // updateTotalCart(data:any){
-  //   let subTotal
-  //   if(data){
-  //     subTotal = data.map((product: { price: number; quantity:number }) => product.price * product.quantity);
-  //   }
-  //   if(subTotal){
-    
-  //     console.log(subTotal)
-  //     this.cartService.cartTotal = subTotal.reduce((a: any,b: any) => a+b,0)
-  //   }
-  // }
 }

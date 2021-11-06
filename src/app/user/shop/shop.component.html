@@ -2,9 +2,6 @@
   <h3 class="header">Welcome to Chris' Grocery Store</h3>
    <p class="serverError col-12">{{errorMessage}}</p>
     <div class="products-container">
-      
-     
-    
       <app-product-card  *ngFor="let productEl of products"  [product]=productEl></app-product-card>  
     </div>
   <div>

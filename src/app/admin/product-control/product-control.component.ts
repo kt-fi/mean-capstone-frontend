@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-control.component.css']
 })
 export class ProductControlComponent implements OnInit {
+  
   errorMsg: string = "";
 
   constructor(public productService:ProductService) { }

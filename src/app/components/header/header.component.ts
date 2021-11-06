@@ -20,20 +20,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
    
     setTimeout(()=>{
-      this.type = localStorage.getItem("usertype")
-    },1000)
+      this.type = localStorage.getItem("usertype");
+    },1000);
   }
-
-
-
 
   logout():void{
     localStorage.removeItem("user");
     localStorage.removeItem("uid");
-    localStorage.removeItem("token")
-    
-    this.userService.username=""
-    localStorage.setItem("usertype", "none")
+    localStorage.removeItem("token");
+    this.userService.username="";
+    localStorage.setItem("usertype", "none");
     window.location.replace('/logout');
 
   }

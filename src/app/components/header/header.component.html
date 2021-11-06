@@ -1,39 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" style="padding-right: 30px;" href="#">Chris' Groceries</a>
-      
-      
-      <ng-template  [ngIf]="type == 'user' || type == 'none'" [ngIfElse]="admin">
-       <div class="" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" routerLink="user/shop">Home</a>
-          <a class="nav-link" routerLink="user/wishList">Wish List</a>
-          <a class="nav-link" routerLink="user/cart">Basket</a>
-          <a class="nav-link disabled">{{username}}</a>
-          <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
-          
-        </div>
-        
-      </div> 
-      </ng-template>
-      <ng-template #admin>
-        <div class="" id="navbarNavAltMarkup">
-         <div class="navbar-nav">
-           <a class="nav-link active" aria-current="page" routerLink="admin">Home</a>
-           <a class="nav-link" routerLink="admin/productControl">Find Products</a>
-           <a class="nav-link" routerLink="admin/addNewProduct">New Product</a>
-           <a class="nav-link disabled">Admin Account</a>
-           <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
-           
-         </div>
-         
-       </div> 
-       </ng-template>
-      
-    </div>
-  </nav> -->
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"  data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,11 +13,10 @@
              <a class="nav-link" routerLink="user/cart">Basket</a>
              <a class="nav-link disabled">{{username}}</a>
              <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
-             
            </div>
-           
-         </div> 
-         </ng-template>
+         </div>
+        </ng-template>
+
          <ng-template #admin>
            <div class="" id="navbarNavAltMarkup">
             <div class="navbar-nav">
@@ -61,11 +25,10 @@
               <a class="nav-link" routerLink="admin/addNewProduct">New Product</a>
               <a class="nav-link disabled">Admin Account</a>
               <a class="nav-link " routerLink="logout" (click)="logout()">Log Out</a>
-              
             </div>
-            
-          </div> 
-          </ng-template>
+          </div>
+        </ng-template>
+
       </div>
     </div>
   </nav>

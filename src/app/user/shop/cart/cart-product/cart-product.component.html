@@ -14,16 +14,11 @@
                         <p><i>Price x Unit: {{product.price |  currency: 'EUR':true}}</i></p>
                         <p><b>Total: {{product.price * product.quantity |  currency: 'EUR':true}}</b></p>
                     </div>
-                    
                     <img [src]="product.pimage" class="product-image" alt="">
                     <button class="btn btn-primary remove-btn" (click)= removeItemFromCart(product.id)>Remove Item</button>
                 </div>
-                
             </div>
         </div>
-        
     </div>
-    
 </div>
-
 </div>

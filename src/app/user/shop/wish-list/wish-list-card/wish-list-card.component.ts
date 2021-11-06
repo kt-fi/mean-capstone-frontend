@@ -13,8 +13,8 @@ export class WishListCardComponent implements OnInit {
 
   constructor() { }
 
-@Output() delete = new EventEmitter()
-@Output() add = new EventEmitter()
+  @Output() delete = new EventEmitter()
+  @Output() add = new EventEmitter()
 
   ngOnInit(): void {
   }
