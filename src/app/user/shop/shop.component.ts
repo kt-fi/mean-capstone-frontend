@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -17,7 +17,9 @@ export class ShopComponent implements OnInit {
   pageDown:boolean = false;
   products?:Product[];
   uid?:any
-
+  message:string = ""
+  errorMessage?:any;
+  
 
 
   constructor(private productService:ProductService) { }
@@ -26,15 +28,15 @@ export class ShopComponent implements OnInit {
 
     
   
-    this.productService.getAllProducts(1, this.productsPerPage).subscribe(result=> {
+    this.productService.getAllProducts(1, this.productsPerPage).subscribe((result)=> {
       this.products = result.products 
       this.totalPages = result.totalPages;
-      })
+      },(err)=> this.errorMessage = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN LATER")
    
   }
 
   changePage(){
-    this.productService.getAllProducts(this.pageNumber, this.productsPerPage).subscribe(result=> {
+    this.productService.getAllProducts(this.pageNumber, this.productsPerPage).subscribe((result)=> {
       this.products = result.products;
       console.log(result)
       if(this.pageNumber == 1){
@@ -48,7 +50,10 @@ export class ShopComponent implements OnInit {
       
     }else{
       this.pageUp = true;
-    }})
+    }},(err)=> {
+      this.errorMessage = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN LATER";
+      this.products = undefined;
+    })
 
   
   }
@@ -72,4 +77,6 @@ export class ShopComponent implements OnInit {
     let totalPages = Array(n)
     return totalPages;
   }
+
+
 }

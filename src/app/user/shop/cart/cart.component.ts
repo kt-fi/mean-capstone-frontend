@@ -19,10 +19,11 @@ export class CartComponent implements OnInit {
   }
   // products?:any[];
   msg:string = ""
-
+  get errorMessage(){
+   return this.cartService.errorMessage;
+  }
   ngOnInit(): void {
     this.cartService.getUserCartList(this.uid)
-    
   //   this.cartService.getUserCartList(this.uid).subscribe(result =>{ 
   //     this.products = result})
    }

@@ -1,6 +1,7 @@
 
 
 <div *ngIf="product"  class="product-card card">
+    
     <div class="image-container">
        <img [src]="product.pimage" alt="" class="product-image"> 
     </div>
@@ -18,11 +19,11 @@
         </div>
         
         <div class="col-12 align-bottom">
-             <div class="col-12 mt-3 mb-3">
-            <label class="col-10" style="width: 40%;">
+             <div class="col-12 ">
+            <label class="col-8" style="width: 100%;">
                 Quantity:
             </label>
-         <input class="col-2" type="number" [(ngModel)]="quantity">   
+         <input class="col-4" type="number" style="width: 50%;" [(ngModel)]="quantity">   
         </div>
         
         <div class="buttons">

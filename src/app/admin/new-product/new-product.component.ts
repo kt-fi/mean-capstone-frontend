@@ -16,6 +16,7 @@ export class NewProductComponent implements OnInit {
   message?:any;
 
   placeholderImage:string = "https://media.gettyimages.com/vectors/image-place-holder-with-a-gray-camera-icon-vector-id1226328537?k=20&m=1226328537&s=612x612&w=0&h=2klft8QdMSyDj3oAmFyRyD24Mogj2OygLWrX9Lk6oGQ="
+  errorMsg: string = "";
 
   constructor( public activatedRoute:ActivatedRoute, public productService:ProductService) { }
 
@@ -34,7 +35,9 @@ export class NewProductComponent implements OnInit {
 
     let newProduct = new Product('', pname, description, price, stock, pimage, offer)
     
-    this.productService.createNewProduct(newProduct, this.token).subscribe(result => this.message = result)
+    this.productService.createNewProduct(newProduct, this.token).subscribe((result) => {
+      this.message = result
+    }, (err)=> this.errorMsg = "ThHERE HAS BEEN A SERVER ERROR, PLEASE TRY AGAIN LATER")
 
   }
 }

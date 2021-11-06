@@ -13,6 +13,7 @@ export class ProductControlCardComponent implements OnInit {
 
   token:any = localStorage.getItem("token")
   msg:any;
+  errorMsg: string ="";
 
   constructor(public productService:ProductService, public router:Router) { }
 
@@ -20,7 +21,9 @@ export class ProductControlCardComponent implements OnInit {
   }
 
   deleteProduct(pid:string):void{
-    this.productService.deleteProduct(pid, this.token).subscribe(result => this.msg = result)
+    this.productService.deleteProduct(pid, this.token).subscribe((result) => {
+      this.msg = result
+    }, (err)=> alert("THERE HAS BEEN A SERVER ERROR PLEASE TRY AGAIN LATER"))
      
   }
 

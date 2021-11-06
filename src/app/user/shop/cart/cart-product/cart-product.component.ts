@@ -46,7 +46,7 @@ export class CartProductComponent implements OnInit {
         this.noItems()
       },3001) 
       this.cartService.updateTotalCart(result.products)
-    });
+    },(err)=> this.message = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN");
     
   
   }

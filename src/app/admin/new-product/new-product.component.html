@@ -3,7 +3,9 @@
    
         
        <div class="col-md-6 col-sm-12 col-xs-12 mt-3">
+           <p class="serverError">{{errorMsg}}</p>
             <h1 class="header">Add New Product To Database:</h1>
+            
             <form #formRef="ngForm" (ngSubmit)="submit(formRef)" action="">
                 <label class="form-label" for="">Product Name:</label>
                 <input class="form-control" type="text" name="pname" id=""  ngModel>

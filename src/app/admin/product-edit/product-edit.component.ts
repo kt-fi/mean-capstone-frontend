@@ -16,12 +16,15 @@ export class ProductEditComponent implements OnInit {
   product?:Product;
   updated:boolean = false;
   message:string ="";
+  errorMsg: string ="";
 
   constructor( public activatedRoute:ActivatedRoute, public productService:ProductService) { }
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.params["pid"];
-    this.productService.getProductById(this.productId).subscribe(result => this.product = result);
+    this.productService.getProductById(this.productId).subscribe((result) => {
+      this.product = result
+    }, (err)=> this.errorMsg = "THERE HAS BEEN A SERVER ERROR PLEASE TRY AGAIN LATER");
   }
 
   submitUpdate(formRef:NgForm):void{
@@ -35,7 +38,8 @@ export class ProductEditComponent implements OnInit {
 
     let updateProduct = new Product(pid, pname, description, price, stock, pimage, offer)
     
-    this.productService.updateProduct(updateProduct, this.token).subscribe(result => this.message = "You have succesfuly updated the product", err=> this.message ="An error occured whist saving your product, please try again.")
+    this.productService.updateProduct(updateProduct, this.token).subscribe((result) => this.message = "You have succesfuly updated the product",
+     (err)=> this.message ="An error occured whist saving your product, please try again.")
     this.updated = true;
   }
 

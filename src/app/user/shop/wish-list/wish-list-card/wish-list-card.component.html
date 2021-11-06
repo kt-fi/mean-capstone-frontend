@@ -1,21 +1,31 @@
-<div class="col-md-6 col-sm-12 cart-product">
-    <div class="product-detail">
-    <div class="product-detail-text">
-        <h4 class="">{{product.pname}}</h4>
-        
+
+
+        <div class="m-2 p-2 product-container">
+            <div class="productName">
+              <h4 class="col-12">{{product.pname}}</h4>  
+            </div>
+            <div class="image-container">
+                <img [src]="product.pimage" class="product-image" alt="">
+            </div>
+           
+                
+            <div class="col-12 mt-3 mb-3">
+                <label class="col-10" style="width: 40%;">
+                    Quantity:
+                </label>
+                <input class="col-2" type="number" [(ngModel)]="quantity">
+                <div class="col-12 buttons">
+                    <button class="col-12 btn btn-primary mb-2 mt-2" [disabled]="quantity < 1" (click)="addToCart(product)">Add To Cart</button>
+                    <button class="col-12 btn btn-warning mb-2" (click)="deleteFromWishList(product)">Remove From List</button>       
+                </div>   
+            </div>
+     
         
     </div>
+
+        
+ 
+
+
+
     
-    <img [src]="product.pimage" class="product-image" alt="">
-</div>
-<div class="col-12 mt-3 mb-3">
-    <label class="col-10" style="width: 40%;">
-        Quantity:
-    </label>
- <input class="col-2" type="number" [(ngModel)]="quantity">   
-</div>
-<div >
-    <button class="btn btn-primary remove-btn m-2" [disabled]="quantity < 1" (click)="addToCart(product)">Add To Cart</button>
-    <button class="btn btn-warning remove-btn m-2" (click)="deleteFromWishList(product)">Remove From List</button>       
-</div>  
-</div>

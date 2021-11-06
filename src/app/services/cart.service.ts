@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { CartProduct } from '../models/cart-product';
 import { Product } from '../models/product';
 
@@ -10,27 +11,26 @@ import { Product } from '../models/product';
 export class CartService {
 
   address?:any = null
-
-  products?:any
-
+  products?:any;
   cartTotal?:number;
-
   cartInfo?:any;
+  errorMessage?:string;
 
   constructor(public http: HttpClient) { }
 
   addClientAddress(address:any, uid:string){
      console.log(address)
-      this.http.put(`http://localhost:3001/users/${uid}/addAddress`, {address}).subscribe(result => this.address = result)
+      this.http.put(`${environment.apiUrl}/users/${uid}/addAddress`, {address}).subscribe((result) => {this.address = result},
+      (err)=> this.errorMessage = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN")
   }
   
 
   
   getUserCartList(uid:string){
-   this.http.get<any>(`http://localhost:3001/cart/getUserCartList/${uid}`).subscribe(result =>{
+   this.http.get<any>(`${environment.apiUrl}/cart/getUserCartList/${uid}`).subscribe((result) =>{
      this.products = result
      this.updateTotalCart(result)
-    })
+    },(err)=> this.errorMessage = "A SERVER ERROR HAS OCCURED, PLEASE TRY AGAIN")
    
   }
 

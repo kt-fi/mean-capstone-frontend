@@ -1,6 +1,9 @@
 
 <div class="container">
     <div class="row">
+      <div class="col-12 serverError">
+        {{errorMessage}}
+      </div>
         <ng-template [ngIf]="products" [ngIfElse]="noCart">
       <div class="col-md-6">
         <app-cart-product [products]="products"></app-cart-product>

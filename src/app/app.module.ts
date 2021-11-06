@@ -52,11 +52,7 @@ import { WishListCardComponent } from './user/shop/wish-list/wish-list-card/wish
     ProductControlCardComponent,
     ProductEditComponent,
     NewProductComponent,
-    WishListCardComponent,
-
-
-
-  
+    WishListCardComponent
   ],
   imports: [
     BrowserModule,

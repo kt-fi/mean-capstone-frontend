@@ -31,6 +31,10 @@ export class CartDetailComponent implements OnInit {
 
   uid:any = localStorage.getItem("uid");
 
+  get errorMessage(){
+    return this.cartService.errorMessage;
+  }
+
   constructor( public route:Router, public cartService:CartService, public userService:UserServiceService) { }
 
   ngOnInit(): void {

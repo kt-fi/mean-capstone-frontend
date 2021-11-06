@@ -5,3 +5,10 @@
     font-weight: 800;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.serverError{
+    color:red;
+    font-size: large;
+    font-weight: 700;
+    text-align: center;
+}

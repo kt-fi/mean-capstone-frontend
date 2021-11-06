@@ -46,7 +46,7 @@ export class SignupComponent implements OnInit {
      }else{
        return this.errorMsg = result.msg
      }
-     });
+     }, (err)=> this.errorMsg = "ThHERE HAS BEEN A SERVER ERROR, PLEASE TRY AGAIN LATER");
  
    }
  
