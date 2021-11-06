@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     }else{
       this.errorMsg = result.msg
     }
-    });
+    }, (err)=> this.errorMsg = "ThHERE HAS BEEN A SERVER ERROR, PLEASE TRY AGAIN LATER");
 
   }
 
