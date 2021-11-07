@@ -27,6 +27,7 @@ import { ProductEditComponent } from './admin/product-edit/product-edit.componen
 import { NewProductComponent } from './admin/new-product/new-product.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WishListCardComponent } from './user/shop/wish-list/wish-list-card/wish-list-card.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { WishListCardComponent } from './user/shop/wish-list/wish-list-card/wish
     ProductControlCardComponent,
     ProductEditComponent,
     NewProductComponent,
-    WishListCardComponent
+    WishListCardComponent,
+    NoPageFoundComponent
   ],
   imports: [
     BrowserModule,

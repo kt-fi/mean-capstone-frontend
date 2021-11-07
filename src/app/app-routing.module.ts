@@ -9,6 +9,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { MainComponent } from './components/main/main.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { CartComponent } from './user/shop/cart/cart.component';
 import { PaymentComponent } from './user/shop/payment/payment.component';
 import { ShopComponent } from './user/shop/shop.component';
@@ -38,7 +39,8 @@ const routes: Routes = [
   ]},
   { path:"logout", redirectTo:"auth", pathMatch: "full"},
   
-  {path:"", redirectTo: "auth", pathMatch:"full"}
+  {path:"", redirectTo: "auth", pathMatch:"full"},
+  {path: "**", component:NoPageFoundComponent}
 ];
 
 @NgModule({
