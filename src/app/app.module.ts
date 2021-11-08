@@ -7,8 +7,8 @@ import { MainComponent } from './components/main/main.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
+
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,6 +28,8 @@ import { NewProductComponent } from './admin/new-product/new-product.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WishListCardComponent } from './user/shop/wish-list/wish-list-card/wish-list-card.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
     HttpClientModule,
     RouterModule,
     NgbCollapseModule,
-    NgbModule
+  
+    NgbModule,
+
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

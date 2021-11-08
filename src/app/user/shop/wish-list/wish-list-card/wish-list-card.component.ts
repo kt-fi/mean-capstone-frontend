@@ -8,7 +8,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class WishListCardComponent implements OnInit {
 
-  @Input() product:any;
+  @Input() product:any ="";
  quantity:number = 1
 
   constructor() { }
@@ -17,6 +17,7 @@ export class WishListCardComponent implements OnInit {
   @Output() add = new EventEmitter()
 
   ngOnInit(): void {
+
   }
 
   deleteFromWishList(product:any):void{
