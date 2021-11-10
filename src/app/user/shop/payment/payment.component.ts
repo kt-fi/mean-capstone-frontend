@@ -30,7 +30,7 @@ export class PaymentComponent implements OnInit {
   }
 
   finalizePurchase():void{
-    alert("Your Purchase has been processed and will be shipped to: " + this.address)
+    alert("Your Purchase has been processed and will be shipped to: Your address,  Payment on delivery required.  Thankyou for your custom" )
   }
 
 }
