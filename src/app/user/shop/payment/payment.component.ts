@@ -29,4 +29,8 @@ export class PaymentComponent implements OnInit {
     this.userService.getUserAddress(this.uid).subscribe(result => this.address = result.address)
   }
 
+  finalizePurchase():void{
+    alert("Your Purchase has been processed and will be shipped to: " + this.address)
+  }
+
 }
