@@ -16,11 +16,11 @@
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" name="password" ngModel  #passRef="ngModel" class="form-control" id="exampleInputPassword1" required minlength="5">
+        <label for="exampleInputPassword1" class="form-label">Password (Min: 6 Characters)</label>
+        <input type="password" name="password" ngModel  #passRef="ngModel" class="form-control" id="exampleInputPassword1" required minlength="3">
         <span *ngIf="passRef.errors && (passRef.touched || passRef.dirty)">
             <span [hidden]="!passRef.errors.required"  style="color: red">You must supply a password</span>
-            <span [hidden]="!passRef.errors.minlength"  style="color: red">Password must be at min 5 chars</span>
+            <span [hidden]="!passRef.errors.minlength"  style="color: red">Password must be at min 6 chars</span>
         </span>
         </div>
         <div class="mb-3">
