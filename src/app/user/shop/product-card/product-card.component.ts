@@ -38,7 +38,6 @@ export class ProductCardComponent implements OnInit {
     let productData = new CartProduct(product.pid, product.pname, product.pimage, this.quantity, product.price);
     let uid = localStorage.getItem("uid")
     this.productService.addProductToCart(productData, uid).subscribe((result) => {
-      console.log(result)
     },(err)=> alert("there has been a server error, pleas try again later!"))
   }
 }

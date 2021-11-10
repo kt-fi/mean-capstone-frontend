@@ -16,7 +16,7 @@ export class ProductControlComponent implements OnInit {
   products?:Product[];
 
   ngOnInit(): void {
-    this.productService.getAllProducts(1,200).subscribe((result) => {
+    this.productService.getAllProducts(1,2000).subscribe((result) => {
       this.products = result.products
     }, (err)=> this.errorMsg = "ThHERE HAS BEEN A SERVER ERROR, PLEASE TRY AGAIN LATER");
   }

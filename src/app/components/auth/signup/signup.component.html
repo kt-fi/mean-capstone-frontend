@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center">
 
-    <form class="col-xl-3 col-lg-4 col-md-5 col-sm-12 col-xs-12 p-3 mt-5 signin-box" #signupRef="ngForm" (ngSubmit)="submitForm(signupRef)">    
+    <form class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 p-3 mt-5 signin-box" #signupRef="ngForm" (ngSubmit)="submitForm(signupRef)">    
         <h3>SIGN UP</h3>
         <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">UserName</label>
@@ -35,9 +35,11 @@
         <label class="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
         <p style="color:red">{{errorMsg}}</p> 
-        <button type="submit" class="btn btn-primary" [disabled]="signupRef.invalid">Submit</button>
-        <button type="reset" class="btn btn-warning">Clear Form</button>
-        <a routerLink="../login">Log In</a>
+        <button type="submit" style="width: 50%;" class="btn btn-primary mt-1" [disabled]="signupRef.invalid">Submit</button>
+        <button type="reset" style="width: 50%;" class="btn btn-warning mt-1">Clear Form</button>
+        <div>
+            <a class="btn btn-secondary mt-2" style="width: 100%;" routerLink="../login">Switch To Log In</a>
+        </div>
     </form>
 
 </div>

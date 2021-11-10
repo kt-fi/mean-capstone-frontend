@@ -18,12 +18,9 @@ export class WishListComponent implements OnInit {
   uid:any = localStorage.getItem("uid");
   products?:WishlistProduct[];
 
-  
 
   constructor(public wishListService:WishListService, public productService:ProductService) { }
 
-
-  
 
   ngOnInit(): void {
     this.wishListService.getWishList(this.uid)

@@ -39,6 +39,7 @@ export class CartService {
     if(subTotal){
       this.cartTotal = subTotal.reduce((a: number, b: number) => a+b,0)
     }
+    return this.cartTotal;
   }
 
   removeItemFromCart(itemId:string, uid:string):Observable<any>{

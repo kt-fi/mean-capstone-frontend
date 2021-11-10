@@ -37,7 +37,7 @@ export class NewProductComponent implements OnInit {
     
     this.productService.createNewProduct(newProduct, this.token).subscribe((result) => {
       this.message = result
-    }, (err)=> this.errorMsg = "ThHERE HAS BEEN A SERVER ERROR, PLEASE TRY AGAIN LATER")
+    }, (err)=> this.errorMsg = "THERE HAS BEEN A SERVER ERROR, PLEASE TRY AGAIN LATER")
 
   }
 }

@@ -43,7 +43,7 @@ export class CartProductComponent implements OnInit {
         this.message = "";
       },3000)
       this.products = result.products;
-      // this.updateTotalCart(result.products)
+    
       setTimeout(()=>{
         this.noItems()
       },3001) 
